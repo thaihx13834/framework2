@@ -1,5 +1,13 @@
 import { FormOutlined, PlusSquareOutlined } from "@ant-design/icons";
-import { Button, PageHeader, Switch, Table } from "antd";
+import {
+  Button,
+  Divider,
+  PageHeader,
+  Select,
+  Space,
+  Switch,
+  Table,
+} from "antd";
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -7,6 +15,8 @@ import styled from "styled-components";
 type Props = {};
 
 const Phone = (props: Props) => {
+  const { Option } = Select;
+
   const data: any = [
     {
       key: "1",
@@ -111,6 +121,16 @@ const Phone = (props: Props) => {
           </Link>,
         ]}
       />
+      <Space>
+        <FilterTitle>Lọc:</FilterTitle>
+        <Select placeholder="Danh mục cần tìm kiếm">
+          <Option value="phone">Điện thoại</Option>
+          <Option value="laptop">Laptop</Option>
+          <Option value="tablet">Máy tính bảng</Option>
+          <Option value="sound">Âm thanh</Option>
+        </Select>
+      </Space>
+      <Divider></Divider>
       <Table columns={columns} dataSource={data} pagination={false} />
     </>
   );
@@ -122,6 +142,15 @@ const TitlePage = styled(PageHeader)`
   font-weight: 600;
   line-height: 30px;
   margin-bottom: 50px;
+`;
+
+const FilterTitle = styled.h4`
+  font-size: 16px;
+  color: #5f5e61;
+  font-weight: 600;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
 `;
 
 export default Phone;

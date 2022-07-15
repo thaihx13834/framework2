@@ -5,6 +5,7 @@ import {
   Col,
   Form,
   Input,
+  InputNumber,
   PageHeader,
   Row,
   Select,
@@ -20,6 +21,7 @@ import styled from "styled-components";
 type Props = {};
 
 const AddPhone = (props: Props) => {
+  const [form] = Form.useForm();
   const { Option } = Select;
   return (
     <>
@@ -48,22 +50,51 @@ const AddPhone = (props: Props) => {
           <Col span={12}>
             <InfoProduct>Thông tin sản phẩm</InfoProduct>
 
-            <Form.Item name="name" label="Tên sản phẩm">
+            <Form.Item
+              name="name"
+              label="Tên sản phẩm"
+              rules={[{ required: true, message: "Username is required" }]}
+            >
               <Input />
             </Form.Item>
 
             <DivLine>
               <Form.Item
-                name="name"
+                name="price"
                 label="Giá gốc"
                 style={{ display: "inline-block", width: "48%" }}
+                rules={[
+                  { required: true, message: "Price is required" },
+                  {
+                    pattern: new RegExp(/^[0-9]+$/),
+                    message: "Price is not number",
+                  },
+                ]}
               >
                 <Input />
               </Form.Item>
               <Form.Item
-                name="name"
+                name="pricekm"
+                dependencies={["price"]}
                 label="Giá khuyến mại"
                 style={{ display: "inline-block", width: "48%" }}
+                rules={[
+                  { required: true, message: "Price-km is required" },
+                  {
+                    pattern: new RegExp(/^[0-9]+$/),
+                    message: "Price is not number",
+                  },
+                  ({ getFieldValue }) => ({
+                    validator(_, value) {
+                      if (!value || getFieldValue("price") < value) {
+                        return Promise.reject(
+                          new Error("Giá khuyến mại phải nhỏ hơn giá gốc")
+                        );
+                      }
+                      return Promise.resolve();
+                    },
+                  }),
+                ]}
               >
                 <Input />
               </Form.Item>
