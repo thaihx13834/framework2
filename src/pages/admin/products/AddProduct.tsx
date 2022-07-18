@@ -15,6 +15,7 @@ import {
 } from "antd";
 import Meta from "antd/lib/card/Meta";
 import TextArea from "antd/lib/input/TextArea";
+import { RcFile } from "antd/lib/upload";
 import Dragger from "antd/lib/upload/Dragger";
 import axios from "axios";
 import React, { useState } from "react";
@@ -23,6 +24,7 @@ import { toast, ToastContainer } from "react-toastify";
 import styled from "styled-components";
 import { CategoryType } from "../../../types/CategoryType";
 import { ProductType } from "../../../types/ProductType";
+import { upload } from "../../../utils/upload";
 
 type Props = {
   categories: CategoryType[];
@@ -37,21 +39,7 @@ const AddProduct = (props: Props) => {
   const [fileList, setfileList] = useState<UploadFile[] | any>([]);
 
   const onFinish = async (values: any) => {
-    const CLOUNDINARY_URL =
-      "https://api.cloudinary.com/v1_1/thaicodejj/image/upload";
-    const CLOUNDINARY_PRESET = "fl3e89zr";
-    const file = fileList[0];
-    console.log(file);
-
-    const formData = new FormData();
-    formData.append("file", file.originFileObj);
-    formData.append("upload_preset", CLOUNDINARY_PRESET);
-
-    const { data } = await axios.post(CLOUNDINARY_URL, formData, {
-      headers: { "Content-Type": "application/form-data" },
-    });
-
-    const imgLink = data.url;
+    const imgLink = await upload(fileList[0]);
 
     props.onAdd({
       name: values.name,
@@ -74,6 +62,21 @@ const AddProduct = (props: Props) => {
   const onChange: UploadProps["onChange"] = ({ fileList: newFileList }) => {
     setfileList(newFileList);
   };
+
+  const onPreview = async (file: UploadFile) => {
+    let src = file.url as string;
+    if (!src) {
+      src = await new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file.originFileObj as RcFile);
+        reader.onload = () => resolve(reader.result as string);
+      });
+    }
+    const image = new Image();
+    image.src = src;
+    const imgWindow = window.open(src);
+    imgWindow?.document.write(image.outerHTML);
+  };
   return (
     <>
       <TitlePage>Thêm mới Điện thoại</TitlePage>
@@ -93,6 +96,7 @@ const AddProduct = (props: Props) => {
                     return false;
                   }}
                   onChange={onChange}
+                  onPreview={onPreview}
                   fileList={fileList}
                 >
                   <p className="ant-upload-drag-icon">
