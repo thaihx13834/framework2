@@ -1,8 +1,7 @@
 import { Layout, Menu } from "antd";
 import React from "react";
 import { Outlet } from "react-router-dom";
-import FooterAdmin from "../componets/FooterAdmin";
-import HeaderAdmin from "../componets/header-admin/HeaderAdmin";
+import HeaderAdmin from "../componets/HeaderAdmin";
 import styled from "styled-components";
 import {
   LaptopOutlined,

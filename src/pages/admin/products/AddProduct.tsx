@@ -10,39 +10,99 @@ import {
   Row,
   Select,
   Upload,
+  UploadFile,
+  UploadProps,
 } from "antd";
 import Meta from "antd/lib/card/Meta";
 import TextArea from "antd/lib/input/TextArea";
 import Dragger from "antd/lib/upload/Dragger";
-import React from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 import styled from "styled-components";
+import { CategoryType } from "../../../types/CategoryType";
+import { ProductType } from "../../../types/ProductType";
 
-type Props = {};
+type Props = {
+  categories: CategoryType[];
+  onAdd: (product: any) => void;
+};
 
-const AddPhone = (props: Props) => {
+const AddProduct = (props: Props) => {
+  const navigate = useNavigate();
   const [form] = Form.useForm();
   const { Option } = Select;
+
+  const [fileList, setfileList] = useState<UploadFile[] | any>([]);
+
+  const onFinish = async (values: any) => {
+    const CLOUNDINARY_URL =
+      "https://api.cloudinary.com/v1_1/thaicodejj/image/upload";
+    const CLOUNDINARY_PRESET = "fl3e89zr";
+    const file = fileList[0];
+    console.log(file);
+
+    const formData = new FormData();
+    formData.append("file", file.originFileObj);
+    formData.append("upload_preset", CLOUNDINARY_PRESET);
+
+    const { data } = await axios.post(CLOUNDINARY_URL, formData, {
+      headers: { "Content-Type": "application/form-data" },
+    });
+
+    const imgLink = data.url;
+
+    props.onAdd({
+      name: values.name,
+      originalPrice: values.originalPrice,
+      saleOffPrice: values.saleOffPrice,
+      feature: values.feature,
+      desc: values.desc,
+      brief: values.brief,
+      categoryId: values.categoryId,
+      status: 0,
+      img: imgLink,
+    });
+
+    toast.success("Thêm thành công");
+    setTimeout(() => {
+      navigate("/admin/products");
+    }, 1000);
+  };
+
+  const onChange: UploadProps["onChange"] = ({ fileList: newFileList }) => {
+    setfileList(newFileList);
+  };
   return (
     <>
       <TitlePage>Thêm mới Điện thoại</TitlePage>
-      <FormAdd
-        layout="vertical"
-        initialValues={{
-          category: "Điện thoại",
-        }}
-      >
+      <FormAdd layout="vertical" onFinish={onFinish}>
         <Row>
           <Col span={12}>
             <LeftContent>
-              <UploadImage>
-                <p className="ant-upload-drag-icon">
-                  <PlusSquareOutlined />
-                </p>
-                <p>Thêm ảnh!</p>
-              </UploadImage>
+              <Form.Item
+                name="imgfile"
+                rules={[{ required: true, message: "Hãy thêm 1 ảnh" }]}
+              >
+                <UploadImage
+                  listType="picture"
+                  multiple={false}
+                  maxCount={1}
+                  beforeUpload={() => {
+                    return false;
+                  }}
+                  onChange={onChange}
+                  fileList={fileList}
+                >
+                  <p className="ant-upload-drag-icon">
+                    <PlusSquareOutlined />
+                  </p>
+                  <p>Thêm ảnh!</p>
+                </UploadImage>
+              </Form.Item>
 
-              <Form.Item name="name" label="Mô tả ngắn">
+              <Form.Item name="brief" label="Mô tả ngắn">
                 <TextArea rows={5} placeholder="Mô tả ngắn : " />
               </Form.Item>
             </LeftContent>
@@ -60,7 +120,7 @@ const AddPhone = (props: Props) => {
 
             <DivLine>
               <Form.Item
-                name="price"
+                name="originalPrice"
                 label="Giá gốc"
                 style={{ display: "inline-block", width: "48%" }}
                 rules={[
@@ -74,8 +134,8 @@ const AddPhone = (props: Props) => {
                 <Input />
               </Form.Item>
               <Form.Item
-                name="pricekm"
-                dependencies={["price"]}
+                name="saleOffPrice"
+                dependencies={["originalPrice"]}
                 label="Giá khuyến mại"
                 style={{ display: "inline-block", width: "48%" }}
                 rules={[
@@ -86,7 +146,7 @@ const AddPhone = (props: Props) => {
                   },
                   ({ getFieldValue }) => ({
                     validator(_, value) {
-                      if (!value || getFieldValue("price") < value) {
+                      if (!value || getFieldValue("originalPrice") <= value) {
                         return Promise.reject(
                           new Error("Giá khuyến mại phải nhỏ hơn giá gốc")
                         );
@@ -101,23 +161,29 @@ const AddPhone = (props: Props) => {
             </DivLine>
 
             <Form.Item
-              name="category"
+              name="categoryId"
               label="Danh mục"
               style={{ display: "inline-block", width: "48%" }}
+              rules={[
+                { required: true, message: "Vui lòng chọn danh mục sản phẩm" },
+              ]}
             >
-              <Select placeholder="Select province">
-                <Option value="phone">Điện thoại</Option>
-                <Option value="laptop">Laptop</Option>
-                <Option value="tablet">Máy tính bảng</Option>
-                <Option value="sound">Âm thanh</Option>
+              <Select placeholder="Danh mục sản phẩm">
+                {props.categories.map((item, index) => {
+                  return (
+                    <Option value={item.id} key={index}>
+                      {item.name}
+                    </Option>
+                  );
+                })}
               </Select>
             </Form.Item>
 
-            <Form.Item name="name" label="Đặc điểm nổi bật">
+            <Form.Item name="feature" label="Đặc điểm nổi bật">
               <TextArea rows={5} />
             </Form.Item>
 
-            <Form.Item name="name" label="Mô tả dài">
+            <Form.Item name="desc" label="Mô tả dài">
               <TextArea rows={5} />
             </Form.Item>
 
@@ -129,6 +195,7 @@ const AddPhone = (props: Props) => {
           </Col>
         </Row>
       </FormAdd>
+      <ToastContainer />
     </>
   );
 };
@@ -183,4 +250,4 @@ const UploadImage = styled(Dragger)`
   border-bottom: 1px solid #ccc !important;
   margin-bottom: 20px;
 `;
-export default AddPhone;
+export default AddProduct;

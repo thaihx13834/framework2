@@ -15,12 +15,12 @@ const SideBarAdmin = (props: Props) => {
   const menuItem = [
     {
       key: "phone",
-      label: <Link to="/admin/phones">Điện thoại</Link>,
+      label: <Link to="/admin/products">Sản phẩm</Link>,
       icon: <MobileOutlined />,
     },
-    { key: "laptop", label: "Laptop", icon: <LaptopOutlined /> },
-    { key: "tablet", label: "Máy tính bảng", icon: <TabletOutlined /> },
-    { key: "sound", label: "Âm thanh", icon: <SoundOutlined /> },
+    { key: "1", label: "Laptop", icon: <LaptopOutlined /> },
+    { key: "2", label: "Máy tính bảng", icon: <TabletOutlined /> },
+    { key: "3", label: "Âm thanh", icon: <SoundOutlined /> },
   ];
   return (
     <SideBar theme="light" width={300}>
