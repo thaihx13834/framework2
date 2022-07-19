@@ -24,10 +24,9 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import styled from "styled-components";
 import { listCategory } from "../../../api/category";
-import { addProduct, product, updateProduct } from "../../../api/product";
+import { product, updateProduct } from "../../../api/product";
 import { CategoryType } from "../../../types/CategoryType";
-import { ProductType } from "../../../types/ProductType";
-import { upload } from "../../../utils/upload";
+import { onPreview, upload, validateFile } from "../../../utils/upload";
 
 type Props = {};
 
@@ -92,20 +91,6 @@ const EditProduct = (props: Props) => {
     setfileList(newFileList);
   };
 
-  const onPreview = async (file: UploadFile) => {
-    let src = file.url as string;
-    if (!src) {
-      src = await new Promise((resolve) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file.originFileObj as RcFile);
-        reader.onload = () => resolve(reader.result as string);
-      });
-    }
-    const image = new Image();
-    image.src = src;
-    const imgWindow = window.open(src);
-    imgWindow?.document.write(image.outerHTML);
-  };
   return (
     <>
       <TitlePage>Chỉnh sửa Điện thoại</TitlePage>
@@ -121,9 +106,7 @@ const EditProduct = (props: Props) => {
                   listType="picture"
                   multiple={false}
                   maxCount={1}
-                  beforeUpload={() => {
-                    return false;
-                  }}
+                  beforeUpload={validateFile}
                   onChange={onChange}
                   onPreview={onPreview}
                   fileList={fileList}
@@ -138,8 +121,6 @@ const EditProduct = (props: Props) => {
               <Form.Item label="Ảnh" valuePropName="src" name="img">
                 <img width={200} />
               </Form.Item>
-
-              <Form.Item name="status"></Form.Item>
 
               <Form.Item name="brief" label="Mô tả ngắn">
                 <TextArea rows={5} placeholder="Mô tả ngắn : " />
