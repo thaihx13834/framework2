@@ -21,55 +21,9 @@ import {
 import "react-toastify/dist/ReactToastify.css";
 import { CategoryType } from "./types/CategoryType";
 import { listCategory } from "./api/category";
+import EditProduct from "./pages/admin/products/EditProduct";
 
 function App() {
-  const [product, setProduct] = useState<ProductType[]>([]);
-  const [category, setCategory] = useState<CategoryType[]>([]);
-
-  useEffect(() => {
-    const getProducts = async () => {
-      const { data } = await listProduct();
-      setProduct(data);
-    };
-    const getCategories = async () => {
-      const { data } = await listCategory();
-      setCategory(data);
-      console.log(data);
-    };
-    getCategories();
-    getProducts();
-  }, []);
-
-  const handleRemove = async (id?: string) => {
-    const data = await deleteProduct(id);
-    setProduct(product.filter((item) => item.id !== id));
-  };
-
-  const handleUpdateStatus = async (statusD: number, id: string) => {
-    const { data } = await editStatusProduct({ status: statusD }, id);
-
-    setProduct(product.map((item) => (item.id == id ? data : item)));
-  };
-
-  const handleGetPrWithCategory = async (value: string) => {
-    if (value === undefined) {
-      const { data } = await listProduct();
-      setProduct(data);
-    } else {
-      const { data } = await GetPrWithCategory(value);
-      setProduct(data);
-    }
-  };
-
-  const handleAdd = async (value: ProductType) => {
-    const { data } = await addProduct(value);
-    try {
-      setProduct([data, ...product]);
-    } catch (error) {
-      alert("Khong thanh cong");
-    }
-  };
-
   return (
     <div className="App">
       <Routes>
@@ -81,22 +35,9 @@ function App() {
           <Route index element={<Navigate to="dashboard" />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="products">
-            <Route
-              index
-              element={
-                <Product
-                  products={product}
-                  onRemove={handleRemove}
-                  categories={category}
-                  onUpdateStatus={handleUpdateStatus}
-                  onGetPrWithCategory={handleGetPrWithCategory}
-                />
-              }
-            />
-            <Route
-              path="add"
-              element={<AddProduct categories={category} onAdd={handleAdd} />}
-            />
+            <Route index element={<Product />} />
+            <Route path="add" element={<AddProduct />} />
+            <Route path="edit/:id" element={<EditProduct />} />
           </Route>
         </Route>
       </Routes>

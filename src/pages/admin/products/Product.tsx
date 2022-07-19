@@ -14,35 +14,73 @@ import {
   Switch,
   Table,
 } from "antd";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import styled from "styled-components";
+import { listCategory } from "../../../api/category";
+import {
+  deleteProduct,
+  editStatusProduct,
+  GetPrWithCategory,
+  listProduct,
+} from "../../../api/product";
 import { CategoryType } from "../../../types/CategoryType";
 import { ProductType } from "../../../types/ProductType";
 
 type Props = {
-  products: ProductType[];
-  onRemove: (id?: string) => void;
-  categories: CategoryType[];
-  onUpdateStatus: (status: number, id: string) => void;
-  onGetPrWithCategory: (id: string) => void;
+  // products: ProductType[];
+  // onRemove: (id?: string) => void;
+  // categories: CategoryType[];
+  // onUpdateStatus: (status: number, id: string) => void;
+  // onGetPrWithCategory: (id: string) => void;
 };
 
 const Product = (props: Props) => {
+  const [product, setProduct] = useState<ProductType[]>([]);
+  const [category, setCategory] = useState<CategoryType[]>([]);
   const { Option } = Select;
 
-  const notify = () => toast("Wow so easy!");
+  useEffect(() => {
+    const getProducts = async () => {
+      const { data } = await listProduct();
+      setProduct(data);
+    };
+    const getCategories = async () => {
+      const { data } = await listCategory();
+      setCategory(data);
+      console.log(data);
+    };
+    getCategories();
+    getProducts();
+  }, []);
 
-  const onChange = (checked: boolean, id: string) => {
+  const onChange = async (checked: boolean, id: string) => {
     console.log(checked);
-    props.onUpdateStatus(checked ? 0 : 1, id);
+
+    const status = checked ? 0 : 1;
+
+    const { data } = await editStatusProduct({ status: status }, id);
+
+    setProduct(product.map((item) => (item.id == id ? data : item)));
   };
 
-  const onFilerCategory = (value: any) => {
-    props.onGetPrWithCategory(value);
+  const onFilerCategory = async (value: any) => {
+    if (value === undefined) {
+      const { data } = await listProduct();
+      setProduct(data);
+    } else {
+      const { data } = await GetPrWithCategory(value);
+      setProduct(data);
+    }
   };
-  const data = props.products.map((item, index) => {
+
+  const handleRemove = async (id: string) => {
+    const { data } = await deleteProduct(id);
+    setProduct(product.filter((item) => item.id !== id));
+  };
+
+  const data = product.map((item, index) => {
     return {
       key: index + 1,
       id: item.id,
@@ -81,7 +119,7 @@ const Product = (props: Props) => {
       align: "center" as "center",
       render: (text: string) => {
         let name;
-        props.categories.map((item) => {
+        category.map((item) => {
           if (item.id == text) {
             name = item.name;
           }
@@ -129,6 +167,7 @@ const Product = (props: Props) => {
             defaultChecked={text == 0 ? true : false}
             onChange={() => {
               onChange(text == 0 ? false : true, record.id);
+              toast.success("Thanh đổi trạng thái thành công!");
             }}
           />
         );
@@ -143,7 +182,7 @@ const Product = (props: Props) => {
       render: (text: string, record: ProductType) => {
         return (
           <>
-            <Link to="../edit">
+            <Link to={`/admin/products/edit/${record.id}`}>
               <FormOutlined style={{ fontSize: "20px" }} />
             </Link>
 
@@ -154,7 +193,7 @@ const Product = (props: Props) => {
                   okText: "Đồng ý",
                   okType: "danger",
                   onOk: () => {
-                    props.onRemove(record.id);
+                    handleRemove(record.id as string);
                     toast.success("Xóa thành công rồi!");
                   },
                 });
@@ -185,7 +224,7 @@ const Product = (props: Props) => {
           onChange={onFilerCategory}
           allowClear={true}
         >
-          {props.categories.map((item, index) => {
+          {category.map((item, index) => {
             return (
               <Option value={item.id} key={index}>
                 {item.name}

@@ -1,5 +1,6 @@
 import { InboxOutlined, PlusSquareOutlined } from "@ant-design/icons";
 import {
+  Avatar,
   Button,
   Card,
   Col,
@@ -19,18 +20,18 @@ import { RcFile } from "antd/lib/upload";
 import Dragger from "antd/lib/upload/Dragger";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import styled from "styled-components";
 import { listCategory } from "../../../api/category";
-import { addProduct } from "../../../api/product";
+import { addProduct, product, updateProduct } from "../../../api/product";
 import { CategoryType } from "../../../types/CategoryType";
 import { ProductType } from "../../../types/ProductType";
 import { upload } from "../../../utils/upload";
 
 type Props = {};
 
-const AddProduct = (props: Props) => {
+const EditProduct = (props: Props) => {
   const navigate = useNavigate();
   const [form] = Form.useForm();
   const { Option } = Select;
@@ -38,6 +39,16 @@ const AddProduct = (props: Props) => {
   const [fileList, setfileList] = useState<UploadFile[] | any>([]);
 
   const [category, setCategory] = useState<CategoryType[]>([]);
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    const getProduct = async () => {
+      const { data } = await product(id as string);
+      form.setFieldsValue(data);
+    };
+    getProduct();
+  }, []);
 
   useEffect(() => {
     const getCategories = async () => {
@@ -49,26 +60,31 @@ const AddProduct = (props: Props) => {
   }, []);
 
   const onFinish = async (values: any) => {
-    const imgLink = await upload(fileList[0]);
+    const dataInput = {
+      name: values.name,
+      originalPrice: values.originalPrice,
+      saleOffPrice: values.saleOffPrice,
+      feature: values.feature,
+      desc: values.desc,
+      brief: values.brief,
+      categoryId: values.categoryId,
+      status: values.status,
+      img: values.img,
+    };
+
+    const file = fileList[0];
+    if (file) {
+      dataInput.img = await upload(fileList[0]);
+    }
 
     try {
-      addProduct({
-        name: values.name,
-        originalPrice: values.originalPrice,
-        saleOffPrice: values.saleOffPrice,
-        feature: values.feature,
-        desc: values.desc,
-        brief: values.brief,
-        categoryId: values.categoryId,
-        status: 0,
-        img: imgLink,
-      });
-      toast.success("Thêm thành công");
+      updateProduct(dataInput, id);
+      toast.success("Sửa thành công");
       setTimeout(() => {
         navigate("/admin/products");
       }, 1000);
     } catch (error) {
-      toast.error("Thêm không thành công");
+      toast.error("Sửa không thành công");
     }
   };
 
@@ -92,14 +108,14 @@ const AddProduct = (props: Props) => {
   };
   return (
     <>
-      <TitlePage>Thêm mới Điện thoại</TitlePage>
-      <FormAdd layout="vertical" onFinish={onFinish}>
+      <TitlePage>Chỉnh sửa Điện thoại</TitlePage>
+      <FormAdd layout="vertical" onFinish={onFinish} form={form}>
         <Row>
           <Col span={12}>
             <LeftContent>
               <Form.Item
                 name="imgfile"
-                rules={[{ required: true, message: "Hãy thêm 1 ảnh" }]}
+                // rules={[{ required: true, message: "Hãy thêm 1 ảnh" }]}
               >
                 <UploadImage
                   listType="picture"
@@ -118,6 +134,12 @@ const AddProduct = (props: Props) => {
                   <p>Thêm ảnh!</p>
                 </UploadImage>
               </Form.Item>
+
+              <Form.Item label="Ảnh" valuePropName="src" name="img">
+                <img width={200} />
+              </Form.Item>
+
+              <Form.Item name="status"></Form.Item>
 
               <Form.Item name="brief" label="Mô tả ngắn">
                 <TextArea rows={5} placeholder="Mô tả ngắn : " />
@@ -208,7 +230,7 @@ const AddProduct = (props: Props) => {
 
             <Form.Item>
               <BtnSubmit type="primary" htmlType="submit">
-                Thêm mới
+                Sửa sản phẩm
               </BtnSubmit>
             </Form.Item>
           </Col>
@@ -269,4 +291,4 @@ const UploadImage = styled(Dragger)`
   border-bottom: 1px solid #ccc !important;
   margin-bottom: 20px;
 `;
-export default AddProduct;
+export default EditProduct;
