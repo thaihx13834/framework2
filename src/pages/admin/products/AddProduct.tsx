@@ -26,7 +26,7 @@ import { listCategory } from "../../../api/category";
 import { addProduct } from "../../../api/product";
 import { CategoryType } from "../../../types/CategoryType";
 import { ProductType } from "../../../types/ProductType";
-import { onPreview, upload } from "../../../utils/upload";
+import { onPreview, upload, validateFile } from "../../../utils/upload";
 
 type Props = {};
 
@@ -91,9 +91,7 @@ const AddProduct = (props: Props) => {
                   listType="picture"
                   multiple={false}
                   maxCount={1}
-                  beforeUpload={() => {
-                    return false;
-                  }}
+                  beforeUpload={validateFile}
                   onChange={onChange}
                   onPreview={onPreview}
                   fileList={fileList}
