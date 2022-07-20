@@ -42,7 +42,7 @@ export const validateFile = (file: RcFile) => {
   }
   const isLt2M = file.size / 1024 / 1024 < 10;
   if (!isLt2M) {
-    message.error("Ảnh có kích cỡ quá to (>2MB)");
+    message.error("Ảnh có kích cỡ quá to (>10MB)");
     return !isLt2M;
   }
   return false;

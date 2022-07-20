@@ -2,17 +2,20 @@ import {
   DeleteOutlined,
   FormOutlined,
   PlusSquareOutlined,
+  SearchOutlined,
 } from "@ant-design/icons";
 import {
   Button,
   Divider,
   Image,
+  Input,
   Modal,
   PageHeader,
   Select,
   Space,
   Switch,
   Table,
+  TableProps,
 } from "antd";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -28,17 +31,20 @@ import {
 import { CategoryType } from "../../../types/CategoryType";
 import { ProductType } from "../../../types/ProductType";
 
-type Props = {
-  // products: ProductType[];
-  // onRemove: (id?: string) => void;
-  // categories: CategoryType[];
-  // onUpdateStatus: (status: number, id: string) => void;
-  // onGetPrWithCategory: (id: string) => void;
-};
+type Props = {};
+
+interface FilterDropdownProps {
+  prefixCls: string;
+  setSelectedKeys: (selectedKeys: string[]) => void;
+  selectedKeys: string[];
+  confirm: (closeDropdown?: any) => void;
+  clearFilters: () => void;
+}
 
 const Product = (props: Props) => {
   const [product, setProduct] = useState<ProductType[]>([]);
   const [category, setCategory] = useState<CategoryType[]>([]);
+  const [textsearch, setTextsearch] = useState<string>("");
   const { Option } = Select;
 
   useEffect(() => {
@@ -95,7 +101,7 @@ const Product = (props: Props) => {
     };
   });
 
-  const columns = [
+  const columns: any = [
     {
       title: "Ảnh",
       dataIndex: "img",
@@ -110,6 +116,56 @@ const Product = (props: Props) => {
       dataIndex: "name",
       key: "name",
       align: "center" as "center",
+
+      filterDropdown: ({
+        setSelectedKeys,
+        selectedKeys,
+        confirm,
+        clearFilters,
+      }: FilterDropdownProps) => {
+        return (
+          <div style={{ padding: "10px" }}>
+            <Input
+              autoFocus
+              placeholder="Nhap ten sp!"
+              value={selectedKeys[0]}
+              onChange={(e) => {
+                setSelectedKeys(e.target.value ? [e.target.value] : []);
+                confirm({ closeDropdown: false });
+              }}
+              onPressEnter={() => {
+                confirm();
+              }}
+            ></Input>
+            <Space style={{ marginTop: "20px" }}>
+              <Button
+                onClick={() => {
+                  confirm();
+                }}
+                type="primary"
+              >
+                Oke
+              </Button>
+
+              <Button
+                onClick={() => {
+                  clearFilters();
+                }}
+                type="dashed"
+              >
+                Reset
+              </Button>
+            </Space>
+          </div>
+        );
+      },
+      onFilter: (value: any, record: any) => {
+        return record.name.toLowerCase().includes(value.toLowerCase());
+        // console.log(record.name.toLowerCase().includes(value.toLowerCase()));
+      },
+      filterIcon: () => {
+        return <SearchOutlined />;
+      },
     },
 
     {
@@ -133,6 +189,7 @@ const Product = (props: Props) => {
       dataIndex: "originalPrice",
       key: "originalPrice",
       align: "center" as "center",
+      sorter: (a: any, b: any) => a.originalPrice - b.originalPrice,
     },
 
     {
@@ -140,6 +197,7 @@ const Product = (props: Props) => {
       dataIndex: "saleOffPrice",
       key: "saleOffPrice",
       align: "center" as "center",
+      sorter: (a: any, b: any) => a.saleOffPrice - b.saleOffPrice,
     },
 
     {
@@ -172,6 +230,18 @@ const Product = (props: Props) => {
           />
         );
       },
+
+      filters: [
+        {
+          text: "Hiện",
+          value: 0,
+        },
+        {
+          text: "Ẩn",
+          value: 1,
+        },
+      ],
+      onFilter: (value: string, record: any) => value == record.status,
     },
 
     {
@@ -207,6 +277,37 @@ const Product = (props: Props) => {
     },
   ];
 
+  const handleChangeTextSeach = async (e: any) => {
+    if (e.target.value == "") {
+      const { data } = await listProduct();
+      setProduct(data);
+    }
+    setTextsearch(e.target.value);
+  };
+
+  const handleSearch = async () => {
+    const productList: ProductType[] = [...product];
+
+    const dataSearch = productList.filter((item) => {
+      return (
+        item.name.toLowerCase().includes(textsearch.toLowerCase()) ||
+        item.desc.toLowerCase().includes(textsearch.toLowerCase()) ||
+        item.feature.toLowerCase().includes(textsearch.toLowerCase())
+      );
+    });
+
+    setProduct(dataSearch);
+  };
+
+  const onChangee: TableProps<any>["onChange"] = (
+    pagination,
+    filters,
+    sorter,
+    extra
+  ) => {
+    console.log("params", pagination, filters, sorter, extra);
+  };
+
   return (
     <>
       <TitlePage
@@ -218,7 +319,6 @@ const Product = (props: Props) => {
         ]}
       />
       <Space>
-        <FilterTitle>Lọc:</FilterTitle>
         <Select
           placeholder="Danh mục cần tìm kiếm"
           onChange={onFilerCategory}
@@ -232,9 +332,24 @@ const Product = (props: Props) => {
             );
           })}
         </Select>
+
+        <Input
+          placeholder="Tìm kiếm"
+          onChange={handleChangeTextSeach}
+          allowClear={true}
+          onPressEnter={handleSearch}
+        />
+        <Button type="primary" onClick={handleSearch}>
+          Tìm kiếm
+        </Button>
       </Space>
       <Divider></Divider>
-      <Table columns={columns} dataSource={data} pagination={{ pageSize: 5 }} />
+      <Table
+        columns={columns}
+        dataSource={data}
+        pagination={{ pageSize: 5 }}
+        onChange={onChangee}
+      />
       <ToastContainer />
     </>
   );

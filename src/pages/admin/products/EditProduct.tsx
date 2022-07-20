@@ -61,8 +61,8 @@ const EditProduct = (props: Props) => {
   const onFinish = async (values: any) => {
     const dataInput = {
       name: values.name,
-      originalPrice: values.originalPrice,
-      saleOffPrice: values.saleOffPrice,
+      originalPrice: +values.originalPrice,
+      saleOffPrice: +values.saleOffPrice,
       feature: values.feature,
       desc: values.desc,
       brief: values.brief,
