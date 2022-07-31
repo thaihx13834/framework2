@@ -41,7 +41,7 @@ interface FilterDropdownProps {
   clearFilters: () => void;
 }
 
-const Product = (props: Props) => {
+const Product: React.FC = (props: Props) => {
   const [product, setProduct] = useState<ProductType[]>([]);
   const [category, setCategory] = useState<CategoryType[]>([]);
   const [textsearch, setTextsearch] = useState<string>("");
@@ -102,6 +102,12 @@ const Product = (props: Props) => {
   });
 
   const columns: any = [
+    {
+      title: "Stt",
+      dataIndex: "key",
+      align: "center" as "center",
+      key: "key",
+    },
     {
       title: "Ảnh",
       dataIndex: "img",
@@ -247,7 +253,6 @@ const Product = (props: Props) => {
     {
       title: "Thao tác",
       key: "action",
-
       align: "center" as "center",
       render: (text: string, record: ProductType) => {
         return (
@@ -347,7 +352,7 @@ const Product = (props: Props) => {
       <Table
         columns={columns}
         dataSource={data}
-        pagination={{ pageSize: 5 }}
+        pagination={{ pageSize: 4 }}
         onChange={onChangee}
       />
       <ToastContainer />

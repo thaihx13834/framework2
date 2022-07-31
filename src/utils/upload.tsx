@@ -1,20 +1,19 @@
 import { message } from "antd";
 import { RcFile, UploadFile } from "antd/lib/upload";
 import axios from "axios";
+import { useState } from "react";
+import { uploadImage } from "../api/image";
 
 export const upload = async (file: any) => {
-  const CLOUNDINARY_URL =
-    "https://api.cloudinary.com/v1_1/thaicodejj/image/upload";
-  const CLOUNDINARY_PRESET = "fl3e89zr";
-  console.log(file);
+  let dataAfterRead = "a";
 
-  const formData = new FormData();
-  formData.append("file", file.originFileObj);
-  formData.append("upload_preset", CLOUNDINARY_PRESET);
-
-  const { data } = await axios.post(CLOUNDINARY_URL, formData, {
-    headers: { "Content-Type": "application/form-data" },
+  dataAfterRead = await new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file.originFileObj as RcFile);
+    reader.onload = () => resolve(reader.result as string);
   });
+
+  const { data } = await uploadImage(dataAfterRead);
 
   return data.url;
 };
@@ -28,6 +27,8 @@ export const onPreview = async (file: UploadFile) => {
       reader.onload = () => resolve(reader.result as string);
     });
   }
+  console.log(src);
+
   const image = new Image();
   image.src = src;
   const imgWindow = window.open(src);

@@ -49,7 +49,7 @@ const AddProduct = (props: Props) => {
   }, []);
 
   const onFinish = async (values: any) => {
-    const imgLink = await upload(fileList[0]);
+    const imglink = await upload(fileList[0]);
 
     try {
       addProduct({
@@ -61,7 +61,7 @@ const AddProduct = (props: Props) => {
         brief: values.brief,
         categoryId: values.categoryId,
         status: 0,
-        img: imgLink,
+        img: imglink,
       });
       toast.success("Thêm thành công");
       setTimeout(() => {
@@ -114,7 +114,7 @@ const AddProduct = (props: Props) => {
             <Form.Item
               name="name"
               label="Tên sản phẩm"
-              rules={[{ required: true, message: "Username is required" }]}
+              rules={[{ required: true, message: "Tên không được để trống!" }]}
             >
               <Input />
             </Form.Item>
@@ -125,10 +125,10 @@ const AddProduct = (props: Props) => {
                 label="Giá gốc"
                 style={{ display: "inline-block", width: "48%" }}
                 rules={[
-                  { required: true, message: "Price is required" },
+                  { required: true, message: "Giá không được để trống" },
                   {
                     pattern: new RegExp(/^[0-9]+$/),
-                    message: "Price is not number",
+                    message: "Giá phải là số",
                   },
                 ]}
               >
@@ -142,7 +142,7 @@ const AddProduct = (props: Props) => {
                 rules={[
                   {
                     pattern: new RegExp(/^[0-9]+$/),
-                    message: "Price is not number",
+                    message: "Giá khuyến mại phải là số",
                   },
                   ({ getFieldValue }) => ({
                     validator(_, value) {

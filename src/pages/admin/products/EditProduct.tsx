@@ -133,7 +133,7 @@ const EditProduct = (props: Props) => {
             <Form.Item
               name="name"
               label="Tên sản phẩm"
-              rules={[{ required: true, message: "Username is required" }]}
+              rules={[{ required: true, message: "Tên không được để trống" }]}
             >
               <Input />
             </Form.Item>
