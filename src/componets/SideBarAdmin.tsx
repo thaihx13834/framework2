@@ -18,7 +18,11 @@ const SideBarAdmin = (props: Props) => {
       label: <Link to="/admin/products">Sản phẩm</Link>,
       icon: <MobileOutlined />,
     },
-    { key: "1", label: "Laptop", icon: <LaptopOutlined /> },
+    {
+      key: "1",
+      label: <Link to="/admin/categories">Danh mục sản phẩm</Link>,
+      icon: <LaptopOutlined />,
+    },
     { key: "2", label: "Máy tính bảng", icon: <TabletOutlined /> },
     { key: "3", label: "Âm thanh", icon: <SoundOutlined /> },
   ];

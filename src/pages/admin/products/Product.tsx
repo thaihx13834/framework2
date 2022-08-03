@@ -77,6 +77,7 @@ const Product: React.FC = (props: Props) => {
       setProduct(data);
     } else {
       const { data } = await GetPrWithCategory(value);
+      console.log(data);
       setProduct(data);
     }
   };

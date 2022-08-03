@@ -22,6 +22,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { CategoryType } from "./types/CategoryType";
 import { listCategory } from "./api/category";
 import EditProduct from "./pages/admin/products/EditProduct";
+import Category from "./pages/admin/category/Category";
+import AddCategory from "./pages/admin/category/AddCategory";
+import EditCategory from "./pages/admin/category/EditCategory";
 
 function App() {
   return (
@@ -34,10 +37,18 @@ function App() {
         <Route path="admin" element={<AdminLayout />}>
           <Route index element={<Navigate to="dashboard" />} />
           <Route path="dashboard" element={<Dashboard />} />
+          {/* Product router */}
           <Route path="products">
             <Route index element={<Product />} />
             <Route path="add" element={<AddProduct />} />
             <Route path="edit/:id" element={<EditProduct />} />
+          </Route>
+          {/* Category router */}
+
+          <Route path="categories">
+            <Route index element={<Category />} />
+            <Route path="add" element={<AddCategory />} />
+            <Route path="edit/:id" element={<EditCategory />} />
           </Route>
         </Route>
       </Routes>
