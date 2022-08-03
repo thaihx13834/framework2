@@ -20,7 +20,7 @@
 
 .form_input {
   width: 350px;
-  height: 34px;
+  height: 36px;
   outline: none;
   border: none;
   border-radius: 0px 10px 10px 0px;
@@ -65,5 +65,5 @@
 .quantity {
   position: absolute;
   top: 22px;
-  right: 326px;
+  right: 512px;
 }
