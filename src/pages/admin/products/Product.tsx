@@ -16,6 +16,7 @@ import {
   Switch,
   Table,
   TableProps,
+  Tooltip,
 } from "antd";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -104,18 +105,12 @@ const Product: React.FC = (props: Props) => {
 
   const columns: any = [
     {
-      title: "Stt",
-      dataIndex: "key",
-      align: "center" as "center",
-      key: "key",
-    },
-    {
       title: "Ảnh",
       dataIndex: "img",
       align: "center" as "center",
       key: "img",
       render: (text: string, record: ProductType) => {
-        return <Image width={200} src={text} />;
+        return <Image width={100} src={text} />;
       },
     },
     {
@@ -123,6 +118,14 @@ const Product: React.FC = (props: Props) => {
       dataIndex: "name",
       key: "name",
       align: "center" as "center",
+      ellipsis: {
+        showTitle: false,
+      },
+      render: (name: any) => (
+        <Tooltip placement="topLeft" title={name}>
+          {name}
+        </Tooltip>
+      ),
 
       filterDropdown: ({
         setSelectedKeys,
@@ -212,6 +215,14 @@ const Product: React.FC = (props: Props) => {
       dataIndex: "feature",
       key: "feature",
       align: "center" as "center",
+      ellipsis: {
+        showTitle: false,
+      },
+      render: (feature: any) => (
+        <Tooltip placement="topLeft" title={feature}>
+          {feature}
+        </Tooltip>
+      ),
     },
 
     {
@@ -219,6 +230,14 @@ const Product: React.FC = (props: Props) => {
       dataIndex: "desc",
       key: "desc",
       align: "center" as "center",
+      ellipsis: {
+        showTitle: false,
+      },
+      render: (desc: any) => (
+        <Tooltip placement="topLeft" title={desc}>
+          {desc}
+        </Tooltip>
+      ),
     },
 
     {

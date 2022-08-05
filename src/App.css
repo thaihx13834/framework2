@@ -44,6 +44,8 @@ button {
 }
 
 .swiper {
-  width: 1048px;
-  height: 382px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  /* height: 880px; */
 }

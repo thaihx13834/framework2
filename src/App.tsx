@@ -26,6 +26,8 @@ import Category from "./pages/admin/category/Category";
 import AddCategory from "./pages/admin/category/AddCategory";
 import EditCategory from "./pages/admin/category/EditCategory";
 
+import "swiper/css/bundle";
+
 function App() {
   return (
     <div className="App">
