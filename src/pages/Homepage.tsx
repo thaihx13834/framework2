@@ -47,7 +47,11 @@ const Homepage = (props: Props) => {
 
   const menuCategory = category.map((item) => ({
     key: item.id as string,
-    label: item.name,
+    label: (
+      <NavLink to={`/category/${item.id}`} className="linkc">
+        {item.name}
+      </NavLink>
+    ),
     icon: <RightOutlined />,
   }));
   return (
@@ -142,7 +146,9 @@ const Homepage = (props: Props) => {
                 span={3}
                 color={(Math.floor(Math.random() * 16777215) + 1).toString(16)}
               >
-                {item.name}
+                <NavLink to={`/category/${item.id}`} className="linkc">
+                  {item.name}
+                </NavLink>
                 <ImgCategory>
                   <img src={item.img} alt="" />
                 </ImgCategory>
@@ -271,7 +277,6 @@ const SwiperProduct = styled(Swiper)`
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-
     color: #707070;
   }
 
@@ -319,6 +324,10 @@ const ItemCategory = styled(Col)`
   color: #fff;
   font-size: 14px;
   font-weight: 600;
+
+  .linkc {
+    color: #fff;
+  }
 `;
 
 export default Homepage;

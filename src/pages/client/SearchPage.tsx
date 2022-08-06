@@ -7,25 +7,21 @@ import { GetPrWithCategory, listProductt } from "../../api/product";
 import { CategoryType } from "../../types/CategoryType";
 import { ProductType } from "../../types/ProductType";
 
+import queryString from "query-string";
+
 type Props = {};
 
-const ProductPage = (props: Props) => {
-  const { id } = useParams();
-  const [category, setCategory] = useState<CategoryType>();
-  const [categories, setCategories] = useState<CategoryType[]>([]);
+const SearchPage = (props: Props) => {
+  const { _str } = queryString.parse(location.search);
   const [products, setProducts] = useState<ProductType[]>([]);
 
-  useEffect(() => {
-    const getData = async () => {
-      const { data } = await detailCategory(id);
-      setCategory(data);
-      const resCategory = await listCategoryy();
-      setCategories(resCategory.data);
-      const resProducts = await GetPrWithCategory(id as string);
-      setProducts(resProducts.data);
-    };
-    getData();
-  }, [id]);
+  //   useEffect(() => {
+  //     const getData = async () => {
+  //       const resProducts = await GetPrWithCategory();
+  //       setProducts(resProducts.data);
+  //     };
+  //     getData();
+  //   }, []);
 
   const sortA = () => {
     console.log(1);
@@ -44,10 +40,10 @@ const ProductPage = (props: Props) => {
           <Link to="/">Trang chủ</Link>
         </Breadcrumb.Item>
         <Breadcrumb.Item>
-          <Link to="/">{category?.name}</Link>
+          <Link to="/">Kết quả tìm kiếm cho: "{_str}"</Link>
         </Breadcrumb.Item>
       </Breadcrumbb>
-
+      {/* 
       <Content>
         <div className="list-category">
           <h3 className="list-category-title">Danh mục sản phẩm</h3>
@@ -142,7 +138,7 @@ const ProductPage = (props: Props) => {
             })}
           </Row>
         </div>
-      </Content>
+      </Content> */}
     </div>
   );
 };
@@ -248,4 +244,4 @@ const Content = styled.div`
   }
 `;
 
-export default ProductPage;
+export default SearchPage;

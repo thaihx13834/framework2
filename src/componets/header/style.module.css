@@ -47,13 +47,15 @@
   color: #fff;
   cursor: pointer;
 }
-/* 
-.item:hover {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 4px;
-  border-radius: 10px;
-} */
-
+.search {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.ant-input-affix-wrapper > input.ant-input {
+  width: 450px;
+  border-radius: 15px;
+}
 .content {
   text-align: left;
   margin: 0 10px;

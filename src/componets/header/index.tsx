@@ -1,13 +1,19 @@
-import { UserOutlined } from "@ant-design/icons";
-import { Button, Dropdown, Menu } from "antd";
+import { SearchOutlined, UserOutlined } from "@ant-design/icons";
+import { Button, Dropdown, Form, Input, Menu } from "antd";
 import React, { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import styled from "styled-components";
 import style from "./style.module.css";
 
 type Props = {};
 
 const Header = (props: Props) => {
   const [auth, setAuth] = useState<any>();
+  const navigate = useNavigate();
+  const handleSearch = (e: any) => {
+    const result = e.target.value;
+    navigate(`/search?_str=${result}`);
+  };
   useEffect(() => {
     const getA = () => {
       setAuth(JSON.parse(localStorage.getItem("user") as string));
@@ -66,23 +72,16 @@ const Header = (props: Props) => {
           <img src="../../../img/logo.png" width="65" height="57" alt="" />
         </NavLink>
       </div>
-      <form action="" className={style.form_search}>
-        <div className={style.button_seach}>
-          <button type="submit" className={style.button_submit}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              className="bi bi-search"
-              viewBox="0 0 16 16"
-            >
-              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-            </svg>
-          </button>
-        </div>
-        <input type="text" name="" id="" className={style.form_input} />
-      </form>
+      <div className={style.search}>
+        <Ip
+          size="large"
+          prefix={<SearchOutlined />}
+          className="input-search"
+          onPressEnter={(e) => {
+            handleSearch(e);
+          }}
+        />
+      </div>
       <div className={style.infomation}>
         <div className={style.item}>
           <div className={style.icon_phone}></div>
@@ -177,4 +176,10 @@ const Header = (props: Props) => {
   );
 };
 
+const Ip = styled(Input)`
+  input.ant-input {
+    width: 350px;
+    border-radius: 15px;
+  }
+`;
 export default Header;

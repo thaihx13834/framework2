@@ -31,6 +31,7 @@ import ProductPage from "./pages/client/ProductPage";
 import Signup from "./pages/client/Signup";
 import Signin from "./pages/client/Signin";
 import PrivateRouter from "./pages/client/PrivateRouter";
+import SearchPage from "./pages/client/SearchPage";
 
 function App() {
   return (
@@ -40,8 +41,9 @@ function App() {
         <Route path="signin" element={<Signin />} />
         <Route path="/" element={<ClientLayout />}>
           <Route index element={<Homepage />} />
-          <Route path="products" element={<ProductPage />} />
+          <Route path="category/:id" element={<ProductPage />} />
           <Route path="products/:id" element={<ProductDetail />} />
+          <Route path="/search" element={<SearchPage />} />
         </Route>
         <Route
           path="admin"
