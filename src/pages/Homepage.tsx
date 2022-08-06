@@ -2,7 +2,7 @@ import { RightOutlined } from "@ant-design/icons";
 import { Col, Image, Layout, Menu, Rate, Row, Typography } from "antd";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { listCategory } from "../api/category";
+import { listCategory, listCategoryy } from "../api/category";
 import Banner from "../componets/Banner";
 import { CategoryType } from "../types/CategoryType";
 import { Link, NavLink } from "react-router-dom";
@@ -20,7 +20,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/grid";
-import { listProduct } from "../api/product";
+import { listProduct, listProductt } from "../api/product";
 import { ProductType } from "../types/ProductType";
 
 type Props = {};
@@ -32,12 +32,12 @@ const Homepage = (props: Props) => {
   const [product, setProduct] = useState<CategoryType[]>([]);
   useEffect(() => {
     const getCategories = async () => {
-      const { data } = await listCategory();
+      const { data } = await listCategoryy();
       setCategory(data);
       console.log(data);
     };
     const getProducts = async () => {
-      const { data } = await listProduct();
+      const { data } = await listProductt();
       setProduct(data);
       console.log(data);
     };
@@ -71,11 +71,9 @@ const Homepage = (props: Props) => {
           slidesPerView={4}
           grid={{ rows: 2 }}
           autoplay={{ delay: 2000 }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
         >
           {product.map((item: any, index: number) => {
-            console.log(item);
+            console.log(item.id);
 
             return (
               <SwiperSlide key={index}>
@@ -284,14 +282,15 @@ const SwiperProduct = styled(Swiper)`
     border: 1px solid #e5e7eb;
     border-radius: 5px;
     padding: 6px;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
   }
 
   .brief-content {
     font-weight: 400;
     font-size: 12px;
     line-height: 18px;
-    /* or 150% */
-
     color: #444444;
   }
 `;

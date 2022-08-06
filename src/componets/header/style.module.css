@@ -45,13 +45,14 @@
   align-items: center;
   margin: 0px 10px;
   color: #fff;
+  cursor: pointer;
 }
-
+/* 
 .item:hover {
   background: rgba(255, 255, 255, 0.2);
   padding: 4px;
   border-radius: 10px;
-}
+} */
 
 .content {
   text-align: left;
@@ -65,5 +66,14 @@
 .quantity {
   position: absolute;
   top: 22px;
-  right: 343px;
+  right: 366px;
+}
+
+.bill_icon {
+  font-size: 23px;
+}
+
+.btn_auth {
+  margin-bottom: 0;
+  margin-left: 5px;
 }

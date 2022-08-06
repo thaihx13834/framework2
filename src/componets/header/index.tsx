@@ -1,10 +1,64 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import { UserOutlined } from "@ant-design/icons";
+import { Button, Dropdown, Menu } from "antd";
+import React, { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import style from "./style.module.css";
 
 type Props = {};
 
 const Header = (props: Props) => {
+  const [auth, setAuth] = useState<any>();
+  useEffect(() => {
+    const getA = () => {
+      setAuth(JSON.parse(localStorage.getItem("user") as string));
+    };
+    getA();
+  }, []);
+  const menu = (
+    <Menu
+      items={[
+        {
+          key: "1",
+          label: <Link to={`/signup`}>Đăng kí</Link>,
+        },
+        {
+          label: <Link to={`/signin`}>Đăng nhập</Link>,
+          key: "2",
+        },
+      ]}
+    />
+  );
+  const menuAuth = (
+    <Menu
+      items={[
+        {
+          label: <Link to={`/signin`}>{auth?.user?.name}</Link>,
+          key: "1",
+        },
+        {
+          key: "2",
+          label: (
+            <Button
+              onClick={() => {
+                handleLogout();
+              }}
+            >
+              Đăng xuất
+            </Button>
+          ),
+        },
+      ]}
+    />
+  );
+
+  const handleLogout = () => {
+    console.log(1);
+
+    localStorage.removeItem("user");
+    // setAuth(localStorage.removeItem("user"));
+    setAuth(undefined);
+    console.log(auth);
+  };
   return (
     <div className={style.header}>
       <div className={style.logo}>
@@ -68,89 +122,23 @@ const Header = (props: Props) => {
 
         <div className={style.item}>
           <div className={style.bill_icon}>
-            <svg
-              width="41"
-              height="24"
-              viewBox="0 0 41 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clipPath="url(#clip0_1767_45)">
-                <path
-                  d="M7.10223 23.2294C8.63843 23.2294 9.88377 21.9824 9.88377 20.4441C9.88377 18.9058 8.63843 17.6588 7.10223 17.6588C5.56602 17.6588 4.32068 18.9058 4.32068 20.4441C4.32068 21.9824 5.56602 23.2294 7.10223 23.2294Z"
-                  stroke="white"
-                  strokeWidth="1.66"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M22.9848 23.2294C24.521 23.2294 25.7663 21.9824 25.7663 20.4441C25.7663 18.9058 24.521 17.6588 22.9848 17.6588C21.4486 17.6588 20.2032 18.9058 20.2032 20.4441C20.2032 21.9824 21.4486 23.2294 22.9848 23.2294Z"
-                  stroke="white"
-                  strokeWidth="1.66"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M26.5267 20.4255H30.356C30.7101 20.4255 31.0497 20.2847 31.3001 20.0339C31.5505 19.7832 31.6911 19.4432 31.6911 19.0886V13.518"
-                  stroke="white"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M25.1452 0.835587H13.7409C13.3868 0.835587 13.0472 0.976443 12.7968 1.22717C12.5464 1.47789 12.4058 1.81795 12.4058 2.17253V19.1072C12.4106 19.4585 12.5535 19.7938 12.8033 20.0405C13.0532 20.2873 13.39 20.4256 13.7409 20.4255H19.5729"
-                  stroke="white"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M9.52217 5.49632H6.25848C5.85235 5.49656 5.45262 5.5976 5.09503 5.7904C4.73744 5.98321 4.43316 6.26177 4.20941 6.60116L1.23315 11.1412C0.968496 11.5467 0.82976 12.0216 0.834466 12.506V18.5037C0.841775 19.0159 1.05014 19.5047 1.4145 19.8644C1.77886 20.224 2.26993 20.4256 2.78155 20.4255H3.47694"
-                  stroke="white"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M31.6911 3.22166V2.17253C31.6911 1.81795 31.5505 1.47789 31.3001 1.22717C31.0497 0.976443 30.7101 0.835587 30.356 0.835587H23.2538"
-                  stroke="white"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M40.1656 6.47118H30.1984"
-                  stroke="white"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M37.5509 10.2592H30.1984"
-                  stroke="white"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M39.0251 15.1613H35.2979"
-                  stroke="white"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_1767_45">
-                  <rect width="41" height="24" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
+            <UserOutlined />
           </div>
-          <p className={style.content}>
-            Tra cứu <br />
-            đơn hàng
-          </p>
+          {auth ? (
+            <Dropdown overlay={menuAuth} placement="bottomRight" arrow>
+              <p className={style.btn_auth}>
+                Hi! <br />
+                {auth?.user?.name}
+              </p>
+            </Dropdown>
+          ) : (
+            <Dropdown overlay={menu} placement="bottomRight" arrow>
+              <p className={style.btn_auth}>
+                Đăng kí <br />
+                Đăng nhập
+              </p>
+            </Dropdown>
+          )}
         </div>
 
         <div className={style.item}>
@@ -178,8 +166,6 @@ const Header = (props: Props) => {
                 strokeLinejoin="round"
               />
             </svg>
-
-            <span className={style.quantity}>0</span>
           </div>
           <p className={style.content}>
             Giỏ <br />

@@ -4,7 +4,6 @@ import "./App.css";
 import { Navigate, Route, Routes } from "react-router-dom";
 import ClientLayout from "./layouts/ClientLayout";
 import Homepage from "./pages/Homepage";
-import Prooduct from "./pages/Prooduct";
 import AdminLayout from "./layouts/AdminLayout";
 import Dashboard from "./pages/admin/Dashboard";
 import AddProduct from "./pages/admin/products/AddProduct";
@@ -27,16 +26,31 @@ import AddCategory from "./pages/admin/category/AddCategory";
 import EditCategory from "./pages/admin/category/EditCategory";
 
 import "swiper/css/bundle";
+import ProductDetail from "./pages/client/ProductDetail";
+import ProductPage from "./pages/client/ProductPage";
+import Signup from "./pages/client/Signup";
+import Signin from "./pages/client/Signin";
+import PrivateRouter from "./pages/client/PrivateRouter";
 
 function App() {
   return (
     <div className="App">
       <Routes>
+        <Route path="signup" element={<Signup />} />
+        <Route path="signin" element={<Signin />} />
         <Route path="/" element={<ClientLayout />}>
           <Route index element={<Homepage />} />
-          <Route path="products" element={<Prooduct />} />
+          <Route path="products" element={<ProductPage />} />
+          <Route path="products/:id" element={<ProductDetail />} />
         </Route>
-        <Route path="admin" element={<AdminLayout />}>
+        <Route
+          path="admin"
+          element={
+            <PrivateRouter>
+              <AdminLayout />
+            </PrivateRouter>
+          }
+        >
           <Route index element={<Navigate to="dashboard" />} />
           <Route path="dashboard" element={<Dashboard />} />
           {/* Product router */}

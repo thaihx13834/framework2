@@ -6,6 +6,11 @@ export const listProduct = () => {
   return instance.get(url);
 };
 
+export const listProductt = () => {
+  const url = `/products?_sort=createdAt&_order=desc&status=0`;
+  return instance.get(url);
+};
+
 export const product = (id: string) => {
   const url = `/products/${id}`;
   return instance.get(url);
@@ -38,4 +43,12 @@ export const updateProduct = (product: any, id?: string) => {
   const url = `/products/${id}`;
 
   return instance.patch(url, product);
+};
+
+export const similarProduct = (categoryId: string) => {
+  console.log(categoryId);
+
+  const url = `/products?categoryId=${categoryId}&_limit=6`;
+
+  return instance.get(url);
 };

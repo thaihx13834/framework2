@@ -6,14 +6,17 @@ export const listCategory = () => {
   return instance.get(url);
 };
 
+export const listCategoryy = () => {
+  const url = `/categories?_sort=createdAt&_order=desc&status=0`;
+  return instance.get(url);
+};
+
 export const deleteCategory = (id?: string) => {
   const url = `/categories/${id}`;
   return instance.delete(url);
 };
 
 export const detailCategory = (id: any) => {
-  console.log(id);
-
   const url = `/categories/${id}`;
   return instance.get(url);
 };
