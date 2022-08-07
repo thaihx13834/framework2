@@ -3,17 +3,34 @@ import { Button, Dropdown, Form, Input, Menu } from "antd";
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { search } from "../../api/product";
+import { ProductType } from "../../types/ProductType";
 import style from "./style.module.css";
 
 type Props = {};
 
 const Header = (props: Props) => {
   const [auth, setAuth] = useState<any>();
+  const [searchtxt, setSearchtxt] = useState<string>("");
+  const [product, setProduct] = useState<ProductType[]>([]);
   const navigate = useNavigate();
-  const handleSearch = (e: any) => {
-    const result = e.target.value;
-    navigate(`/search?_str=${result}`);
+  const handleSearch = (value: any) => {
+    navigate(`/search?_str=${value}`);
   };
+
+  const handleChange = (e: any) => {
+    setSearchtxt(e.target.value);
+    console.log(searchtxt);
+  };
+
+  useEffect(() => {
+    const getData = async () => {
+      const resProducts = await search(searchtxt as string);
+      setProduct(resProducts.data);
+    };
+    getData();
+  }, [searchtxt]);
+
   useEffect(() => {
     const getA = () => {
       setAuth(JSON.parse(localStorage.getItem("user") as string));
@@ -77,10 +94,33 @@ const Header = (props: Props) => {
           size="large"
           prefix={<SearchOutlined />}
           className="input-search"
-          onPressEnter={(e) => {
-            handleSearch(e);
-          }}
+          enterButton={false}
+          onSearch={handleSearch}
+          onChange={handleChange}
+          value={searchtxt ? searchtxt : ""}
         />
+        {searchtxt && (
+          <Search className="input-search-product">
+            <div className="input-product-list">
+              {product.map((item, index) => {
+                return (
+                  <div
+                    className="product-item"
+                    key={index}
+                    onClick={() => {
+                      navigate(`/search?_str=${item.name}`);
+
+                      setSearchtxt("");
+                    }}
+                  >
+                    <img src={item.img} alt="" width={100} />
+                    <h4>{item.name}</h4>
+                  </div>
+                );
+              })}
+            </div>
+          </Search>
+        )}
       </div>
       <div className={style.infomation}>
         <div className={style.item}>
@@ -176,10 +216,30 @@ const Header = (props: Props) => {
   );
 };
 
-const Ip = styled(Input)`
+const Ip = styled(Input.Search)`
+  position: relative;
   input.ant-input {
     width: 350px;
     border-radius: 15px;
+  }
+
+  .ant-input-group-addon {
+    display: none;
+  }
+`;
+
+const Search = styled.div`
+  position: absolute;
+  top: 51px;
+  z-index: 20;
+  width: 394px;
+  padding: 20px 10px;
+  background-color: #fff;
+
+  .product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 `;
 export default Header;

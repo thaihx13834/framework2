@@ -52,10 +52,7 @@
   align-items: center;
   padding: 10px;
 }
-.ant-input-affix-wrapper > input.ant-input {
-  width: 450px;
-  border-radius: 15px;
-}
+
 .content {
   text-align: left;
   margin: 0 10px;

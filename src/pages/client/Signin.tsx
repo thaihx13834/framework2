@@ -68,7 +68,7 @@ const Signin = (props: Props) => {
               },
             ]}
           >
-            <Input placeholder="" />
+            <Input.Password placeholder="" />
           </Form.Item>
           <Form.Item>
             <Button

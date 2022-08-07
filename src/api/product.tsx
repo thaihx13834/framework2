@@ -52,3 +52,8 @@ export const similarProduct = (categoryId: string) => {
 
   return instance.get(url);
 };
+
+export const search = (searchTxt: string) => {
+  const url = `/products?q=${searchTxt}`;
+  return instance.get(url);
+};
