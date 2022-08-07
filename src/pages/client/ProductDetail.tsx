@@ -1,6 +1,7 @@
 import { ShoppingCartOutlined } from "@ant-design/icons";
-import { Breadcrumb, Col, Image, Row } from "antd";
+import { Breadcrumb, Col, Image, message, Row } from "antd";
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { detailCategory } from "../../api/category";
@@ -28,6 +29,18 @@ const ProductDetail = (props: Props) => {
     };
     getProduct();
   }, [id]);
+
+  const dispatch = useDispatch();
+
+  const addToCart = (item: any) => {
+    message.success("Thêm vào giỏ hàng thành công");
+
+    item.quantity = 1;
+    dispatch({
+      type: "cart/add",
+      payload: item,
+    });
+  };
   return (
     <div>
       <Breadcrumbb>
@@ -35,7 +48,7 @@ const ProductDetail = (props: Props) => {
           <Link to="/">Trang chủ</Link>
         </Breadcrumb.Item>
         <Breadcrumb.Item>
-          <Link to="/">{category?.name}</Link>
+          <Link to={`/category/${category?.id}`}>{category?.name}</Link>
         </Breadcrumb.Item>
         <Breadcrumb.Item>
           <Link to={`/products/${id}`}>{productd?.name}</Link>
@@ -75,7 +88,11 @@ const ProductDetail = (props: Props) => {
               <div className="product-action">
                 <button className="buy-now">Mua Ngay</button>
                 <div className="add-cart">
-                  <button>
+                  <button
+                    onClick={() => {
+                      addToCart(productd);
+                    }}
+                  >
                     <ShoppingCartOutlined />
                   </button>
                   <p>

@@ -1,6 +1,7 @@
 import { SearchOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Dropdown, Form, Input, Menu } from "antd";
+import { Badge, Button, Dropdown, Form, Input, Menu } from "antd";
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { search } from "../../api/product";
@@ -10,6 +11,9 @@ import style from "./style.module.css";
 type Props = {};
 
 const Header = (props: Props) => {
+  const { cart, total }: any = useSelector((store) => store);
+  const quan = cart.length;
+
   const [auth, setAuth] = useState<any>();
   const [searchtxt, setSearchtxt] = useState<string>("");
   const [product, setProduct] = useState<ProductType[]>([]);
@@ -108,7 +112,7 @@ const Header = (props: Props) => {
                     className="product-item"
                     key={index}
                     onClick={() => {
-                      navigate(`/search?_str=${item.name}`);
+                      navigate(`/products/${item.id}`);
 
                       setSearchtxt("");
                     }}
@@ -179,38 +183,41 @@ const Header = (props: Props) => {
             </Dropdown>
           )}
         </div>
-
-        <div className={style.item}>
-          <div className={style.cart_icon}>
-            <svg
-              width="25"
-              height="25"
-              viewBox="0 0 25 25"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className={style.c}
-            >
-              <path
-                d="M9.30994 7.51354V3.8138C9.30899 3.39575 9.39087 2.98165 9.55085 2.59542C9.71082 2.20919 9.94573 1.85847 10.242 1.56353C10.5383 1.26858 10.89 1.03525 11.277 0.877009C11.6639 0.718767 12.0784 0.638749 12.4964 0.641575V0.641575C13.3378 0.641575 14.1446 0.975791 14.7395 1.5707C15.3344 2.16561 15.6687 2.97247 15.6687 3.8138V7.51354"
-                stroke="white"
-                strokeWidth="1.28315"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M18.9122 24.3584H6.08075C5.63137 24.3578 5.18696 24.2644 4.77534 24.084C4.36373 23.9037 3.99377 23.6404 3.68863 23.3105C3.3835 22.9806 3.14975 22.5912 3.00202 22.1668C2.85429 21.7424 2.79576 21.2921 2.8301 20.844L3.96355 6.25891C3.98506 6.00175 4.10263 5.76212 4.29286 5.58775C4.48309 5.41337 4.73201 5.31704 4.99007 5.31794H20.0029C20.2602 5.31718 20.5083 5.41375 20.6974 5.58827C20.8864 5.7628 21.0025 6.00237 21.0223 6.25891L22.1415 20.844C22.1768 21.2905 22.1196 21.7395 21.9736 22.1629C21.8275 22.5864 21.5957 22.9751 21.2927 23.3049C20.9896 23.6347 20.6218 23.8985 20.2123 24.0798C19.8027 24.261 19.3601 24.3559 18.9122 24.3584V24.3584Z"
-                stroke="white"
-                strokeWidth="1.28315"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+        <Link to={`/cart`}>
+          <div className={style.item}>
+            <div className={style.cart_icon}>
+              <Badge count={quan}>
+                <svg
+                  width="25"
+                  height="25"
+                  viewBox="0 0 25 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={style.c}
+                >
+                  <path
+                    d="M9.30994 7.51354V3.8138C9.30899 3.39575 9.39087 2.98165 9.55085 2.59542C9.71082 2.20919 9.94573 1.85847 10.242 1.56353C10.5383 1.26858 10.89 1.03525 11.277 0.877009C11.6639 0.718767 12.0784 0.638749 12.4964 0.641575V0.641575C13.3378 0.641575 14.1446 0.975791 14.7395 1.5707C15.3344 2.16561 15.6687 2.97247 15.6687 3.8138V7.51354"
+                    stroke="white"
+                    strokeWidth="1.28315"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M18.9122 24.3584H6.08075C5.63137 24.3578 5.18696 24.2644 4.77534 24.084C4.36373 23.9037 3.99377 23.6404 3.68863 23.3105C3.3835 22.9806 3.14975 22.5912 3.00202 22.1668C2.85429 21.7424 2.79576 21.2921 2.8301 20.844L3.96355 6.25891C3.98506 6.00175 4.10263 5.76212 4.29286 5.58775C4.48309 5.41337 4.73201 5.31704 4.99007 5.31794H20.0029C20.2602 5.31718 20.5083 5.41375 20.6974 5.58827C20.8864 5.7628 21.0025 6.00237 21.0223 6.25891L22.1415 20.844C22.1768 21.2905 22.1196 21.7395 21.9736 22.1629C21.8275 22.5864 21.5957 22.9751 21.2927 23.3049C20.9896 23.6347 20.6218 23.8985 20.2123 24.0798C19.8027 24.261 19.3601 24.3559 18.9122 24.3584V24.3584Z"
+                    stroke="white"
+                    strokeWidth="1.28315"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </Badge>
+            </div>
+            <p className={style.content}>
+              Giỏ <br />
+              hàng
+            </p>
           </div>
-          <p className={style.content}>
-            Giỏ <br />
-            hàng
-          </p>
-        </div>
+        </Link>
       </div>
     </div>
   );

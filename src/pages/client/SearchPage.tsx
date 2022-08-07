@@ -7,8 +7,6 @@ import { GetPrWithCategory, listProductt, search } from "../../api/product";
 import { CategoryType } from "../../types/CategoryType";
 import { ProductType } from "../../types/ProductType";
 
-import queryString from "query-string";
-
 type Props = {};
 
 const SearchPage = (props: Props) => {

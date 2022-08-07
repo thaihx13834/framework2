@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "./logo.svg";
+
 import "./App.css";
 import { Navigate, Route, Routes } from "react-router-dom";
 import ClientLayout from "./layouts/ClientLayout";
@@ -32,6 +32,7 @@ import Signup from "./pages/client/Signup";
 import Signin from "./pages/client/Signin";
 import PrivateRouter from "./pages/client/PrivateRouter";
 import SearchPage from "./pages/client/SearchPage";
+import Cart from "./pages/client/Cart";
 
 function App() {
   return (
@@ -43,7 +44,8 @@ function App() {
           <Route index element={<Homepage />} />
           <Route path="category/:id" element={<ProductPage />} />
           <Route path="products/:id" element={<ProductDetail />} />
-          <Route path="/search" element={<SearchPage />} />
+          <Route path="search" element={<SearchPage />} />
+          <Route path="cart" element={<Cart />} />
         </Route>
         <Route
           path="admin"
