@@ -27,7 +27,7 @@ const Banner = (props: Props) => {
       // grid={{ rows: 2, fill: "column" }}
       navigation
       pagination={{ clickable: true }}
-      // autoplay={{ delay: 1000 }}
+      autoplay={{ delay: 1000 }}
       scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log("slide change")}

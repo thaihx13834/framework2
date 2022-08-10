@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "server": "node server.tsx"
+    "server": "json-server-auth db.json --watch --port 3001"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",

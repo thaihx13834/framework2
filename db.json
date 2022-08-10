@@ -1,0 +1,390 @@
+{
+  "users": [
+    {
+      "email": "phone@gmail.com",
+      "password": "$2a$10$LaIPSKvnTucwe.FgHJlOTuYB0qxaw4qGoEkQtjNZaML5n1CSrqc.i",
+      "id": 1
+    },
+    {
+      "email": "phonee@gmail.com",
+      "password": "$2a$10$pNMTsnIcL6ORvvxEpNpVT.E90XuOyR.WyBVR.h.md5q046svo..SC",
+      "createdAt": 1658068449054,
+      "id": 2
+    },
+    {
+      "email": "phone2e@gmail.com",
+      "password": "$2a$10$rmM/oXVuw.rAb7yXe.r8fOwHCLjFuuYqzrG4pgHfxAaCPZ/JhZg3u",
+      "createdAt": "Sun Jul 17 2022",
+      "id": 3
+    },
+    {
+      "email": "phone22e@gmail.com",
+      "password": "$2a$10$d40cevcHP/nrsw4oKRDwKep6kCvuxh7gveCcxkzrM.UydSySZUuHG",
+      "createdAt": "2022-07-17T14:38:41.145Z",
+      "id": 4
+    },
+    {
+      "email": "thai@gmail.com",
+      "password": "$2a$10$u69x2atf4zz0jwJ.y9/C6u/lUipliNryWFYECWuHCQ98.mMxQFvWG",
+      "createdAt": "2022-07-27T04:33:36.190Z",
+      "id": 5
+    },
+    {
+      "email": "ssss@gmail.com",
+      "password": "$2a$10$Y6JxzSHqXn4LS1ilTVxTK.2jVZcMUKzXQhPFJr8pSpfV7vkwvv1ou",
+      "phone": "0399710843",
+      "status": 0,
+      "createdAt": "2022-08-06T07:45:34.362Z",
+      "id": 6
+    },
+    {
+      "email": "thai.hoang13834@gmail.com",
+      "password": "$2a$10$212FYUhTkbfoitUZWy.rte7/YyaVpnikWTUIYYa28DJAD1WEFLt8.",
+      "name": "thaidepzai",
+      "status": 1,
+      "createdAt": "2022-08-06T08:55:13.681Z",
+      "id": 7
+    },
+    {
+      "email": "thai.hoang1233834@gmail.com",
+      "password": "$2a$10$yBvkZFbGwFWWaKiy/Sh1LewsvpV1kVSQ6YR/qbRCoWs4qujL4i6wa",
+      "name": "123123",
+      "status": 0,
+      "createdAt": "2022-08-06T09:01:02.245Z",
+      "id": 8
+    },
+    {
+      "email": "123123@gmail.com",
+      "password": "$2a$10$K5NuOvBVUBXDn8V0IfXkj.rPD970D6DSqMbKQWQVRdZ.vo7A0nQVq",
+      "name": "Hoàng Thái",
+      "status": 0,
+      "createdAt": "2022-08-06T09:01:23.960Z",
+      "id": 9
+    },
+    {
+      "email": "1231232@gmail.com",
+      "password": "$2a$10$G/UTyOHKTr.vhTrCl2v0COnA68v2VGvvGWYqdvWRfaSvjD3JGg/9m",
+      "name": "asdasd",
+      "status": 0,
+      "createdAt": "2022-08-06T09:01:47.745Z",
+      "id": 10
+    },
+    {
+      "email": "123@gmail.com",
+      "password": "$2a$10$kaz8Xs9ihwOO2OrRZ0wG6eyr1ylHqQqOEUdv40cK0TnixLti3o4S6",
+      "name": "Hoàng Thái",
+      "status": 0,
+      "createdAt": "2022-08-06T09:02:12.267Z",
+      "id": 11
+    },
+    {
+      "email": "oceconde@gmail.com",
+      "password": "$2a$10$TQKfRaV3wJfRF.BKhGvkGOibjdD/nAGL6U4Eg7CG0fUq.A2Bj8hjO",
+      "name": "Hoàng Thái",
+      "status": 0,
+      "createdAt": "2022-08-07T05:14:55.478Z",
+      "id": 12
+    },
+    {
+      "email": "emthai101@gmail.com",
+      "password": "$2a$10$bzUfwHk8S.uT/VAMNnY4zOiK6SXmm/JX.UChGtUvzSsTH57VrltFy",
+      "name": "Hoàng Thái",
+      "status": 0,
+      "createdAt": "2022-08-08T00:00:35.553Z",
+      "id": 13
+    }
+  ],
+  "categories": [
+    {
+      "name": "Dây đeo đồng hồ",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659614103/anhhtus/jajwfi6fkb0uubijxssc.png",
+      "createdAt": "2022-08-03T01:03:47.391Z",
+      "id": "Wo9UIyA"
+    },
+    {
+      "name": "Phụ kiện Apple",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659614080/anhhtus/f5fi5vo1sulpuwsy5jjo.png",
+      "createdAt": "2022-08-03T01:25:10.263Z",
+      "id": "2h0YrF8"
+    },
+    {
+      "name": "Thiết bị mạng",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659614131/anhhtus/pr7jvx6vdlf0idk1i0hq.png",
+      "createdAt": "2022-08-04T11:55:32.926Z",
+      "id": "2yzOxLc"
+    },
+    {
+      "name": "Dán màn hình",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659614200/anhhtus/tnio0ddrs3aw7nh3gngo.png",
+      "createdAt": "2022-08-04T11:56:41.909Z",
+      "id": "-uuj6HN"
+    },
+    {
+      "name": "Thẻ nhớ, USB",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659614221/anhhtus/z3mrfxysnrseodeukgoq.png",
+      "createdAt": "2022-08-04T11:57:03.101Z",
+      "id": "UlQdRu7"
+    },
+    {
+      "name": "Camera",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659614238/anhhtus/ytltoj6tt9ruozymne6o.png",
+      "createdAt": "2022-08-04T11:57:20.300Z",
+      "id": "F42fx7q"
+    }
+  ],
+  "products": [
+    {
+      "name": "iPhone 14 Pro Max 128GB | Chính hãng VN/A",
+      "originalPrice": 34900000,
+      "saleOffPrice": 27390000,
+      "feature": "Camera chất lượng, bắt trọn từng khoảng khắc - Cụm 4 camera với cảm biến chính lên đến 108 MP\nThưởng thức không gian giải trí cực đỉnh - Màn hình lớn 6.7 inch, độ phân giải Full HD+, 120Hz mượt mà",
+      "desc": "Năm 2022 hứa hẹn sẽ là một năm rất đáng trông đợi đối với những ai là fan của thương hiệu điện thoại Samsung. Mới đây, hãng sẽ tiếp tục cho ra mắt nhiều smartphone với sự cải tiến trong thiết kế và cấu hình, trong đó phải kể đến chiếc Samsung Galaxy A73 với nhiều cải tiến so với thế hệ trước. Vậy sản phẩm có gì nổi bật, giá bao nhiêu và liệu có nên mua không? Tìm hiểu ngay nhé!\nĐánh giá Samsung A73 - Hiệu năng mượt mà, chụp ảnh chuyên nghiệp\nĐiện thoại cao cấp nhất dòng Galaxy A series sở hữu nhiều nâng cấp đáng giá so với thế hệ trước, từ ngoại hình cho đến hiệu năng, đặc biệt là hệ thống camera. Sau đây là những đánh giá chi tiết về chiếc\nThiết kế sang trọng, màn hình Super AMOLED\nTrước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.\nSamsung Galaxy A73 được thiết kế gọn nhẹ với tiêu chí đáp ứng khả năng mang theo để tiện đi lại cho người dùng. Giờ đây, bạn có thể mang theo chiếc smartphone bên cạnh đến bất cứ đâu, bất cứ lúc nào.\nKích thước và trọng lượng của chiếc điện thoại rất vừa phải và dĩ nhiên sẽ không chiếm quá nhiều diện tích trong túi xách và có thể di chuyển dễ dàng.",
+      "brief": " Trước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.",
+      "categoryId": "2yzOxLc",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659530373/anhhtus/wlc53oycanv93idedvf3.png",
+      "createdAt": "2022-08-03T12:39:35.184Z",
+      "id": 1
+    },
+    {
+      "name": "iPhone 13 Pro Max 128GB | Chính hãng VN/A",
+      "originalPrice": 34900000,
+      "saleOffPrice": 27390000,
+      "feature": "Camera chất lượng, bắt trọn từng khoảng khắc - Cụm 4 camera với cảm biến chính lên đến 108 MP\nThưởng thức không gian giải trí cực đỉnh - Màn hình lớn 6.7 inch, độ phân giải Full HD+, 120Hz mượt mà",
+      "desc": "Năm 2022 hứa hẹn sẽ là một năm rất đáng trông đợi đối với những ai là fan của thương hiệu điện thoại Samsung. Mới đây, hãng sẽ tiếp tục cho ra mắt nhiều smartphone với sự cải tiến trong thiết kế và cấu hình, trong đó phải kể đến chiếc Samsung Galaxy A73 với nhiều cải tiến so với thế hệ trước. Vậy sản phẩm có gì nổi bật, giá bao nhiêu và liệu có nên mua không? Tìm hiểu ngay nhé!\nĐánh giá Samsung A73 - Hiệu năng mượt mà, chụp ảnh chuyên nghiệp\nĐiện thoại cao cấp nhất dòng Galaxy A series sở hữu nhiều nâng cấp đáng giá so với thế hệ trước, từ ngoại hình cho đến hiệu năng, đặc biệt là hệ thống camera. Sau đây là những đánh giá chi tiết về chiếc\nThiết kế sang trọng, màn hình Super AMOLED\nTrước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.\nSamsung Galaxy A73 được thiết kế gọn nhẹ với tiêu chí đáp ứng khả năng mang theo để tiện đi lại cho người dùng. Giờ đây, bạn có thể mang theo chiếc smartphone bên cạnh đến bất cứ đâu, bất cứ lúc nào.\nKích thước và trọng lượng của chiếc điện thoại rất vừa phải và dĩ nhiên sẽ không chiếm quá nhiều diện tích trong túi xách và có thể di chuyển dễ dàng.",
+      "brief": " Trước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.",
+      "categoryId": "2h0YrF8",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659530373/anhhtus/wlc53oycanv93idedvf3.png",
+      "createdAt": "2022-08-03T12:39:35.184Z",
+      "id": 2
+    },
+    {
+      "name": "iPhone 13 Pro Max 128GB | Chính hãng VN/A",
+      "originalPrice": 34900000,
+      "saleOffPrice": 27390000,
+      "feature": "Camera chất lượng, bắt trọn từng khoảng khắc - Cụm 4 camera với cảm biến chính lên đến 108 MP\nThưởng thức không gian giải trí cực đỉnh - Màn hình lớn 6.7 inch, độ phân giải Full HD+, 120Hz mượt mà",
+      "desc": "Năm 2022 hứa hẹn sẽ là một năm rất đáng trông đợi đối với những ai là fan của thương hiệu điện thoại Samsung. Mới đây, hãng sẽ tiếp tục cho ra mắt nhiều smartphone với sự cải tiến trong thiết kế và cấu hình, trong đó phải kể đến chiếc Samsung Galaxy A73 với nhiều cải tiến so với thế hệ trước. Vậy sản phẩm có gì nổi bật, giá bao nhiêu và liệu có nên mua không? Tìm hiểu ngay nhé!\nĐánh giá Samsung A73 - Hiệu năng mượt mà, chụp ảnh chuyên nghiệp\nĐiện thoại cao cấp nhất dòng Galaxy A series sở hữu nhiều nâng cấp đáng giá so với thế hệ trước, từ ngoại hình cho đến hiệu năng, đặc biệt là hệ thống camera. Sau đây là những đánh giá chi tiết về chiếc\nThiết kế sang trọng, màn hình Super AMOLED\nTrước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.\nSamsung Galaxy A73 được thiết kế gọn nhẹ với tiêu chí đáp ứng khả năng mang theo để tiện đi lại cho người dùng. Giờ đây, bạn có thể mang theo chiếc smartphone bên cạnh đến bất cứ đâu, bất cứ lúc nào.\nKích thước và trọng lượng của chiếc điện thoại rất vừa phải và dĩ nhiên sẽ không chiếm quá nhiều diện tích trong túi xách và có thể di chuyển dễ dàng.",
+      "brief": " Trước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.",
+      "categoryId": "2h0YrF8",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659530373/anhhtus/wlc53oycanv93idedvf3.png",
+      "createdAt": "2022-08-03T12:39:35.184Z",
+      "id": 3
+    },
+    {
+      "name": "iPhone 13 Pro Max 128GB | Chính hãng VN/A",
+      "originalPrice": 34900000,
+      "saleOffPrice": 1200000,
+      "feature": "Camera chất lượng, bắt trọn từng khoảng khắc - Cụm 4 camera với cảm biến chính lên đến 108 MP\nThưởng thức không gian giải trí cực đỉnh - Màn hình lớn 6.7 inch, độ phân giải Full HD+, 120Hz mượt mà",
+      "desc": "Năm 2022 hứa hẹn sẽ là một năm rất đáng trông đợi đối với những ai là fan của thương hiệu điện thoại Samsung. Mới đây, hãng sẽ tiếp tục cho ra mắt nhiều smartphone với sự cải tiến trong thiết kế và cấu hình, trong đó phải kể đến chiếc Samsung Galaxy A73 với nhiều cải tiến so với thế hệ trước. Vậy sản phẩm có gì nổi bật, giá bao nhiêu và liệu có nên mua không? Tìm hiểu ngay nhé!\nĐánh giá Samsung A73 - Hiệu năng mượt mà, chụp ảnh chuyên nghiệp\nĐiện thoại cao cấp nhất dòng Galaxy A series sở hữu nhiều nâng cấp đáng giá so với thế hệ trước, từ ngoại hình cho đến hiệu năng, đặc biệt là hệ thống camera. Sau đây là những đánh giá chi tiết về chiếc\nThiết kế sang trọng, màn hình Super AMOLED\nTrước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.\nSamsung Galaxy A73 được thiết kế gọn nhẹ với tiêu chí đáp ứng khả năng mang theo để tiện đi lại cho người dùng. Giờ đây, bạn có thể mang theo chiếc smartphone bên cạnh đến bất cứ đâu, bất cứ lúc nào.\nKích thước và trọng lượng của chiếc điện thoại rất vừa phải và dĩ nhiên sẽ không chiếm quá nhiều diện tích trong túi xách và có thể di chuyển dễ dàng.",
+      "brief": " Trước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.",
+      "categoryId": "2h0YrF8",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659530373/anhhtus/wlc53oycanv93idedvf3.png",
+      "createdAt": "2022-08-03T12:39:35.184Z",
+      "id": 4
+    },
+    {
+      "name": "iPhone 13 Pro Max 128GB | Chính hãng VN/A",
+      "originalPrice": 34900000,
+      "saleOffPrice": 27390000,
+      "feature": "Camera chất lượng, bắt trọn từng khoảng khắc - Cụm 4 camera với cảm biến chính lên đến 108 MP\nThưởng thức không gian giải trí cực đỉnh - Màn hình lớn 6.7 inch, độ phân giải Full HD+, 120Hz mượt mà",
+      "desc": "Năm 2022 hứa hẹn sẽ là một năm rất đáng trông đợi đối với những ai là fan của thương hiệu điện thoại Samsung. Mới đây, hãng sẽ tiếp tục cho ra mắt nhiều smartphone với sự cải tiến trong thiết kế và cấu hình, trong đó phải kể đến chiếc Samsung Galaxy A73 với nhiều cải tiến so với thế hệ trước. Vậy sản phẩm có gì nổi bật, giá bao nhiêu và liệu có nên mua không? Tìm hiểu ngay nhé!\nĐánh giá Samsung A73 - Hiệu năng mượt mà, chụp ảnh chuyên nghiệp\nĐiện thoại cao cấp nhất dòng Galaxy A series sở hữu nhiều nâng cấp đáng giá so với thế hệ trước, từ ngoại hình cho đến hiệu năng, đặc biệt là hệ thống camera. Sau đây là những đánh giá chi tiết về chiếc\nThiết kế sang trọng, màn hình Super AMOLED\nTrước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.\nSamsung Galaxy A73 được thiết kế gọn nhẹ với tiêu chí đáp ứng khả năng mang theo để tiện đi lại cho người dùng. Giờ đây, bạn có thể mang theo chiếc smartphone bên cạnh đến bất cứ đâu, bất cứ lúc nào.\nKích thước và trọng lượng của chiếc điện thoại rất vừa phải và dĩ nhiên sẽ không chiếm quá nhiều diện tích trong túi xách và có thể di chuyển dễ dàng.",
+      "brief": " Trước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.",
+      "categoryId": "2h0YrF8",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659530373/anhhtus/wlc53oycanv93idedvf3.png",
+      "createdAt": "2022-08-03T12:39:35.184Z",
+      "id": 5
+    },
+    {
+      "name": "iPhone 13 Pro Max 128GB | Chính hãng VN/A",
+      "originalPrice": 34900000,
+      "saleOffPrice": 27390000,
+      "feature": "Camera chất lượng, bắt trọn từng khoảng khắc - Cụm 4 camera với cảm biến chính lên đến 108 MP\nThưởng thức không gian giải trí cực đỉnh - Màn hình lớn 6.7 inch, độ phân giải Full HD+, 120Hz mượt mà",
+      "desc": "Năm 2022 hứa hẹn sẽ là một năm rất đáng trông đợi đối với những ai là fan của thương hiệu điện thoại Samsung. Mới đây, hãng sẽ tiếp tục cho ra mắt nhiều smartphone với sự cải tiến trong thiết kế và cấu hình, trong đó phải kể đến chiếc Samsung Galaxy A73 với nhiều cải tiến so với thế hệ trước. Vậy sản phẩm có gì nổi bật, giá bao nhiêu và liệu có nên mua không? Tìm hiểu ngay nhé!\nĐánh giá Samsung A73 - Hiệu năng mượt mà, chụp ảnh chuyên nghiệp\nĐiện thoại cao cấp nhất dòng Galaxy A series sở hữu nhiều nâng cấp đáng giá so với thế hệ trước, từ ngoại hình cho đến hiệu năng, đặc biệt là hệ thống camera. Sau đây là những đánh giá chi tiết về chiếc\nThiết kế sang trọng, màn hình Super AMOLED\nTrước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.\nSamsung Galaxy A73 được thiết kế gọn nhẹ với tiêu chí đáp ứng khả năng mang theo để tiện đi lại cho người dùng. Giờ đây, bạn có thể mang theo chiếc smartphone bên cạnh đến bất cứ đâu, bất cứ lúc nào.\nKích thước và trọng lượng của chiếc điện thoại rất vừa phải và dĩ nhiên sẽ không chiếm quá nhiều diện tích trong túi xách và có thể di chuyển dễ dàng.",
+      "brief": " Trước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.",
+      "categoryId": "2h0YrF8",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659530373/anhhtus/wlc53oycanv93idedvf3.png",
+      "createdAt": "2022-08-03T12:39:35.184Z",
+      "id": 6
+    },
+    {
+      "name": "iPhone 13 Pro Max 128GB | Chính hãng VN/A",
+      "originalPrice": 34900000,
+      "saleOffPrice": 27390000,
+      "feature": "Camera chất lượng, bắt trọn từng khoảng khắc - Cụm 4 camera với cảm biến chính lên đến 108 MP\nThưởng thức không gian giải trí cực đỉnh - Màn hình lớn 6.7 inch, độ phân giải Full HD+, 120Hz mượt mà",
+      "desc": "Năm 2022 hứa hẹn sẽ là một năm rất đáng trông đợi đối với những ai là fan của thương hiệu điện thoại Samsung. Mới đây, hãng sẽ tiếp tục cho ra mắt nhiều smartphone với sự cải tiến trong thiết kế và cấu hình, trong đó phải kể đến chiếc Samsung Galaxy A73 với nhiều cải tiến so với thế hệ trước. Vậy sản phẩm có gì nổi bật, giá bao nhiêu và liệu có nên mua không? Tìm hiểu ngay nhé!\nĐánh giá Samsung A73 - Hiệu năng mượt mà, chụp ảnh chuyên nghiệp\nĐiện thoại cao cấp nhất dòng Galaxy A series sở hữu nhiều nâng cấp đáng giá so với thế hệ trước, từ ngoại hình cho đến hiệu năng, đặc biệt là hệ thống camera. Sau đây là những đánh giá chi tiết về chiếc\nThiết kế sang trọng, màn hình Super AMOLED\nTrước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.\nSamsung Galaxy A73 được thiết kế gọn nhẹ với tiêu chí đáp ứng khả năng mang theo để tiện đi lại cho người dùng. Giờ đây, bạn có thể mang theo chiếc smartphone bên cạnh đến bất cứ đâu, bất cứ lúc nào.\nKích thước và trọng lượng của chiếc điện thoại rất vừa phải và dĩ nhiên sẽ không chiếm quá nhiều diện tích trong túi xách và có thể di chuyển dễ dàng.",
+      "brief": " Trước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.",
+      "categoryId": "2h0YrF8",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659530373/anhhtus/wlc53oycanv93idedvf3.png",
+      "createdAt": "2022-08-03T12:39:35.184Z",
+      "id": 7
+    },
+    {
+      "name": "iPhone 13 Pro Max 128GB | Chính hãng VN/A",
+      "originalPrice": 34900000,
+      "saleOffPrice": 27390000,
+      "feature": "Camera chất lượng, bắt trọn từng khoảng khắc - Cụm 4 camera với cảm biến chính lên đến 108 MP\nThưởng thức không gian giải trí cực đỉnh - Màn hình lớn 6.7 inch, độ phân giải Full HD+, 120Hz mượt mà",
+      "desc": "Năm 2022 hứa hẹn sẽ là một năm rất đáng trông đợi đối với những ai là fan của thương hiệu điện thoại Samsung. Mới đây, hãng sẽ tiếp tục cho ra mắt nhiều smartphone với sự cải tiến trong thiết kế và cấu hình, trong đó phải kể đến chiếc Samsung Galaxy A73 với nhiều cải tiến so với thế hệ trước. Vậy sản phẩm có gì nổi bật, giá bao nhiêu và liệu có nên mua không? Tìm hiểu ngay nhé!\nĐánh giá Samsung A73 - Hiệu năng mượt mà, chụp ảnh chuyên nghiệp\nĐiện thoại cao cấp nhất dòng Galaxy A series sở hữu nhiều nâng cấp đáng giá so với thế hệ trước, từ ngoại hình cho đến hiệu năng, đặc biệt là hệ thống camera. Sau đây là những đánh giá chi tiết về chiếc\nThiết kế sang trọng, màn hình Super AMOLED\nTrước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.\nSamsung Galaxy A73 được thiết kế gọn nhẹ với tiêu chí đáp ứng khả năng mang theo để tiện đi lại cho người dùng. Giờ đây, bạn có thể mang theo chiếc smartphone bên cạnh đến bất cứ đâu, bất cứ lúc nào.\nKích thước và trọng lượng của chiếc điện thoại rất vừa phải và dĩ nhiên sẽ không chiếm quá nhiều diện tích trong túi xách và có thể di chuyển dễ dàng.",
+      "brief": " Trước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.",
+      "categoryId": "2h0YrF8",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659530373/anhhtus/wlc53oycanv93idedvf3.png",
+      "createdAt": "2022-08-03T12:39:35.184Z",
+      "id": 8
+    },
+    {
+      "name": "iPhone 13 Pro Max 128GB | Chính hãng VN/A",
+      "originalPrice": 34900000,
+      "saleOffPrice": 27390000,
+      "feature": "Camera chất lượng, bắt trọn từng khoảng khắc - Cụm 4 camera với cảm biến chính lên đến 108 MP\nThưởng thức không gian giải trí cực đỉnh - Màn hình lớn 6.7 inch, độ phân giải Full HD+, 120Hz mượt mà",
+      "desc": "Năm 2022 hứa hẹn sẽ là một năm rất đáng trông đợi đối với những ai là fan của thương hiệu điện thoại Samsung. Mới đây, hãng sẽ tiếp tục cho ra mắt nhiều smartphone với sự cải tiến trong thiết kế và cấu hình, trong đó phải kể đến chiếc Samsung Galaxy A73 với nhiều cải tiến so với thế hệ trước. Vậy sản phẩm có gì nổi bật, giá bao nhiêu và liệu có nên mua không? Tìm hiểu ngay nhé!\nĐánh giá Samsung A73 - Hiệu năng mượt mà, chụp ảnh chuyên nghiệp\nĐiện thoại cao cấp nhất dòng Galaxy A series sở hữu nhiều nâng cấp đáng giá so với thế hệ trước, từ ngoại hình cho đến hiệu năng, đặc biệt là hệ thống camera. Sau đây là những đánh giá chi tiết về chiếc\nThiết kế sang trọng, màn hình Super AMOLED\nTrước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.\nSamsung Galaxy A73 được thiết kế gọn nhẹ với tiêu chí đáp ứng khả năng mang theo để tiện đi lại cho người dùng. Giờ đây, bạn có thể mang theo chiếc smartphone bên cạnh đến bất cứ đâu, bất cứ lúc nào.\nKích thước và trọng lượng của chiếc điện thoại rất vừa phải và dĩ nhiên sẽ không chiếm quá nhiều diện tích trong túi xách và có thể di chuyển dễ dàng.",
+      "brief": " Trước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.",
+      "categoryId": "2h0YrF8",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659530373/anhhtus/wlc53oycanv93idedvf3.png",
+      "createdAt": "2022-08-03T12:39:35.184Z",
+      "id": 9
+    },
+    {
+      "name": "iPhone 13 Pro Max 128GB | Chính hãng VN/A",
+      "originalPrice": 34900000,
+      "saleOffPrice": 27390000,
+      "feature": "Camera chất lượng, bắt trọn từng khoảng khắc - Cụm 4 camera với cảm biến chính lên đến 108 MP\nThưởng thức không gian giải trí cực đỉnh - Màn hình lớn 6.7 inch, độ phân giải Full HD+, 120Hz mượt mà",
+      "desc": "Năm 2022 hứa hẹn sẽ là một năm rất đáng trông đợi đối với những ai là fan của thương hiệu điện thoại Samsung. Mới đây, hãng sẽ tiếp tục cho ra mắt nhiều smartphone với sự cải tiến trong thiết kế và cấu hình, trong đó phải kể đến chiếc Samsung Galaxy A73 với nhiều cải tiến so với thế hệ trước. Vậy sản phẩm có gì nổi bật, giá bao nhiêu và liệu có nên mua không? Tìm hiểu ngay nhé!\nĐánh giá Samsung A73 - Hiệu năng mượt mà, chụp ảnh chuyên nghiệp\nĐiện thoại cao cấp nhất dòng Galaxy A series sở hữu nhiều nâng cấp đáng giá so với thế hệ trước, từ ngoại hình cho đến hiệu năng, đặc biệt là hệ thống camera. Sau đây là những đánh giá chi tiết về chiếc\nThiết kế sang trọng, màn hình Super AMOLED\nTrước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.\nSamsung Galaxy A73 được thiết kế gọn nhẹ với tiêu chí đáp ứng khả năng mang theo để tiện đi lại cho người dùng. Giờ đây, bạn có thể mang theo chiếc smartphone bên cạnh đến bất cứ đâu, bất cứ lúc nào.\nKích thước và trọng lượng của chiếc điện thoại rất vừa phải và dĩ nhiên sẽ không chiếm quá nhiều diện tích trong túi xách và có thể di chuyển dễ dàng.",
+      "brief": " Trước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.",
+      "categoryId": "2h0YrF8",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659530373/anhhtus/wlc53oycanv93idedvf3.png",
+      "createdAt": "2022-08-03T12:39:35.184Z",
+      "id": 10
+    },
+    {
+      "name": "iPhone 13 Pro Max 128GB | Chính hãng VN/A",
+      "originalPrice": 34900000,
+      "saleOffPrice": 27390000,
+      "feature": "Camera chất lượng, bắt trọn từng khoảng khắc - Cụm 4 camera với cảm biến chính lên đến 108 MP\nThưởng thức không gian giải trí cực đỉnh - Màn hình lớn 6.7 inch, độ phân giải Full HD+, 120Hz mượt mà",
+      "desc": "Năm 2022 hứa hẹn sẽ là một năm rất đáng trông đợi đối với những ai là fan của thương hiệu điện thoại Samsung. Mới đây, hãng sẽ tiếp tục cho ra mắt nhiều smartphone với sự cải tiến trong thiết kế và cấu hình, trong đó phải kể đến chiếc Samsung Galaxy A73 với nhiều cải tiến so với thế hệ trước. Vậy sản phẩm có gì nổi bật, giá bao nhiêu và liệu có nên mua không? Tìm hiểu ngay nhé!\nĐánh giá Samsung A73 - Hiệu năng mượt mà, chụp ảnh chuyên nghiệp\nĐiện thoại cao cấp nhất dòng Galaxy A series sở hữu nhiều nâng cấp đáng giá so với thế hệ trước, từ ngoại hình cho đến hiệu năng, đặc biệt là hệ thống camera. Sau đây là những đánh giá chi tiết về chiếc\nThiết kế sang trọng, màn hình Super AMOLED\nTrước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.\nSamsung Galaxy A73 được thiết kế gọn nhẹ với tiêu chí đáp ứng khả năng mang theo để tiện đi lại cho người dùng. Giờ đây, bạn có thể mang theo chiếc smartphone bên cạnh đến bất cứ đâu, bất cứ lúc nào.\nKích thước và trọng lượng của chiếc điện thoại rất vừa phải và dĩ nhiên sẽ không chiếm quá nhiều diện tích trong túi xách và có thể di chuyển dễ dàng.",
+      "brief": " Trước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.",
+      "categoryId": "2h0YrF8",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659530373/anhhtus/wlc53oycanv93idedvf3.png",
+      "createdAt": "2022-08-03T12:39:35.184Z",
+      "id": 11
+    },
+    {
+      "name": "iPhone 13 Pro Max 128GB | Chính hãng VN/A",
+      "originalPrice": 34900000,
+      "saleOffPrice": 27390000,
+      "feature": "Camera chất lượng, bắt trọn từng khoảng khắc - Cụm 4 camera với cảm biến chính lên đến 108 MP\nThưởng thức không gian giải trí cực đỉnh - Màn hình lớn 6.7 inch, độ phân giải Full HD+, 120Hz mượt mà",
+      "desc": "Năm 2022 hứa hẹn sẽ là một năm rất đáng trông đợi đối với những ai là fan của thương hiệu điện thoại Samsung. Mới đây, hãng sẽ tiếp tục cho ra mắt nhiều smartphone với sự cải tiến trong thiết kế và cấu hình, trong đó phải kể đến chiếc Samsung Galaxy A73 với nhiều cải tiến so với thế hệ trước. Vậy sản phẩm có gì nổi bật, giá bao nhiêu và liệu có nên mua không? Tìm hiểu ngay nhé!\nĐánh giá Samsung A73 - Hiệu năng mượt mà, chụp ảnh chuyên nghiệp\nĐiện thoại cao cấp nhất dòng Galaxy A series sở hữu nhiều nâng cấp đáng giá so với thế hệ trước, từ ngoại hình cho đến hiệu năng, đặc biệt là hệ thống camera. Sau đây là những đánh giá chi tiết về chiếc\nThiết kế sang trọng, màn hình Super AMOLED\nTrước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.\nSamsung Galaxy A73 được thiết kế gọn nhẹ với tiêu chí đáp ứng khả năng mang theo để tiện đi lại cho người dùng. Giờ đây, bạn có thể mang theo chiếc smartphone bên cạnh đến bất cứ đâu, bất cứ lúc nào.\nKích thước và trọng lượng của chiếc điện thoại rất vừa phải và dĩ nhiên sẽ không chiếm quá nhiều diện tích trong túi xách và có thể di chuyển dễ dàng.",
+      "brief": " Trước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.",
+      "categoryId": "2h0YrF8",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659530373/anhhtus/wlc53oycanv93idedvf3.png",
+      "createdAt": "2022-08-03T12:39:35.184Z",
+      "id": 12
+    },
+    {
+      "name": "iPhone 13 Pro Max 128GB | Chính hãng VN/A",
+      "originalPrice": 34900000,
+      "saleOffPrice": 27390000,
+      "feature": "Camera chất lượng, bắt trọn từng khoảng khắc - Cụm 4 camera với cảm biến chính lên đến 108 MP\nThưởng thức không gian giải trí cực đỉnh - Màn hình lớn 6.7 inch, độ phân giải Full HD+, 120Hz mượt mà",
+      "desc": "Năm 2022 hứa hẹn sẽ là một năm rất đáng trông đợi đối với những ai là fan của thương hiệu điện thoại Samsung. Mới đây, hãng sẽ tiếp tục cho ra mắt nhiều smartphone với sự cải tiến trong thiết kế và cấu hình, trong đó phải kể đến chiếc Samsung Galaxy A73 với nhiều cải tiến so với thế hệ trước. Vậy sản phẩm có gì nổi bật, giá bao nhiêu và liệu có nên mua không? Tìm hiểu ngay nhé!\nĐánh giá Samsung A73 - Hiệu năng mượt mà, chụp ảnh chuyên nghiệp\nĐiện thoại cao cấp nhất dòng Galaxy A series sở hữu nhiều nâng cấp đáng giá so với thế hệ trước, từ ngoại hình cho đến hiệu năng, đặc biệt là hệ thống camera. Sau đây là những đánh giá chi tiết về chiếc\nThiết kế sang trọng, màn hình Super AMOLED\nTrước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.\nSamsung Galaxy A73 được thiết kế gọn nhẹ với tiêu chí đáp ứng khả năng mang theo để tiện đi lại cho người dùng. Giờ đây, bạn có thể mang theo chiếc smartphone bên cạnh đến bất cứ đâu, bất cứ lúc nào.\nKích thước và trọng lượng của chiếc điện thoại rất vừa phải và dĩ nhiên sẽ không chiếm quá nhiều diện tích trong túi xách và có thể di chuyển dễ dàng.",
+      "brief": " Trước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.",
+      "categoryId": "2h0YrF8",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659530373/anhhtus/wlc53oycanv93idedvf3.png",
+      "createdAt": "2022-08-03T12:39:35.184Z",
+      "id": 13
+    },
+    {
+      "name": "iPhone 13 Pro Max 128GB | Chính hãng VN/A",
+      "originalPrice": 34900000,
+      "saleOffPrice": 27390000,
+      "feature": "Camera chất lượng, bắt trọn từng khoảng khắc - Cụm 4 camera với cảm biến chính lên đến 108 MP\nThưởng thức không gian giải trí cực đỉnh - Màn hình lớn 6.7 inch, độ phân giải Full HD+, 120Hz mượt mà",
+      "desc": "Năm 2022 hứa hẹn sẽ là một năm rất đáng trông đợi đối với những ai là fan của thương hiệu điện thoại Samsung. Mới đây, hãng sẽ tiếp tục cho ra mắt nhiều smartphone với sự cải tiến trong thiết kế và cấu hình, trong đó phải kể đến chiếc Samsung Galaxy A73 với nhiều cải tiến so với thế hệ trước. Vậy sản phẩm có gì nổi bật, giá bao nhiêu và liệu có nên mua không? Tìm hiểu ngay nhé!\nĐánh giá Samsung A73 - Hiệu năng mượt mà, chụp ảnh chuyên nghiệp\nĐiện thoại cao cấp nhất dòng Galaxy A series sở hữu nhiều nâng cấp đáng giá so với thế hệ trước, từ ngoại hình cho đến hiệu năng, đặc biệt là hệ thống camera. Sau đây là những đánh giá chi tiết về chiếc\nThiết kế sang trọng, màn hình Super AMOLED\nTrước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.\nSamsung Galaxy A73 được thiết kế gọn nhẹ với tiêu chí đáp ứng khả năng mang theo để tiện đi lại cho người dùng. Giờ đây, bạn có thể mang theo chiếc smartphone bên cạnh đến bất cứ đâu, bất cứ lúc nào.\nKích thước và trọng lượng của chiếc điện thoại rất vừa phải và dĩ nhiên sẽ không chiếm quá nhiều diện tích trong túi xách và có thể di chuyển dễ dàng.",
+      "brief": " Trước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.",
+      "categoryId": "2h0YrF8",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659530373/anhhtus/wlc53oycanv93idedvf3.png",
+      "createdAt": "2022-08-03T12:39:35.184Z",
+      "id": 14
+    },
+    {
+      "name": "iPhone 13 Pro Max 128GB | Chính hãng VN/A",
+      "originalPrice": 34900000,
+      "saleOffPrice": 27390000,
+      "feature": "Camera chất lượng, bắt trọn từng khoảng khắc - Cụm 4 camera với cảm biến chính lên đến 108 MP\nThưởng thức không gian giải trí cực đỉnh - Màn hình lớn 6.7 inch, độ phân giải Full HD+, 120Hz mượt mà",
+      "desc": "Năm 2022 hứa hẹn sẽ là một năm rất đáng trông đợi đối với những ai là fan của thương hiệu điện thoại Samsung. Mới đây, hãng sẽ tiếp tục cho ra mắt nhiều smartphone với sự cải tiến trong thiết kế và cấu hình, trong đó phải kể đến chiếc Samsung Galaxy A73 với nhiều cải tiến so với thế hệ trước. Vậy sản phẩm có gì nổi bật, giá bao nhiêu và liệu có nên mua không? Tìm hiểu ngay nhé!\nĐánh giá Samsung A73 - Hiệu năng mượt mà, chụp ảnh chuyên nghiệp\nĐiện thoại cao cấp nhất dòng Galaxy A series sở hữu nhiều nâng cấp đáng giá so với thế hệ trước, từ ngoại hình cho đến hiệu năng, đặc biệt là hệ thống camera. Sau đây là những đánh giá chi tiết về chiếc\nThiết kế sang trọng, màn hình Super AMOLED\nTrước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.\nSamsung Galaxy A73 được thiết kế gọn nhẹ với tiêu chí đáp ứng khả năng mang theo để tiện đi lại cho người dùng. Giờ đây, bạn có thể mang theo chiếc smartphone bên cạnh đến bất cứ đâu, bất cứ lúc nào.\nKích thước và trọng lượng của chiếc điện thoại rất vừa phải và dĩ nhiên sẽ không chiếm quá nhiều diện tích trong túi xách và có thể di chuyển dễ dàng.",
+      "brief": " Trước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.",
+      "categoryId": "2h0YrF8",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659530373/anhhtus/wlc53oycanv93idedvf3.png",
+      "createdAt": "2022-08-03T12:39:35.184Z",
+      "id": 15
+    },
+    {
+      "name": "iPhone 13 Pro Max 128GB | Chính hãng VN/A",
+      "originalPrice": 34900000,
+      "saleOffPrice": 27390000,
+      "feature": "Camera chất lượng, bắt trọn từng khoảng khắc - Cụm 4 camera với cảm biến chính lên đến 108 MP\nThưởng thức không gian giải trí cực đỉnh - Màn hình lớn 6.7 inch, độ phân giải Full HD+, 120Hz mượt mà",
+      "desc": "Năm 2022 hứa hẹn sẽ là một năm rất đáng trông đợi đối với những ai là fan của thương hiệu điện thoại Samsung. Mới đây, hãng sẽ tiếp tục cho ra mắt nhiều smartphone với sự cải tiến trong thiết kế và cấu hình, trong đó phải kể đến chiếc Samsung Galaxy A73 với nhiều cải tiến so với thế hệ trước. Vậy sản phẩm có gì nổi bật, giá bao nhiêu và liệu có nên mua không? Tìm hiểu ngay nhé!\nĐánh giá Samsung A73 - Hiệu năng mượt mà, chụp ảnh chuyên nghiệp\nĐiện thoại cao cấp nhất dòng Galaxy A series sở hữu nhiều nâng cấp đáng giá so với thế hệ trước, từ ngoại hình cho đến hiệu năng, đặc biệt là hệ thống camera. Sau đây là những đánh giá chi tiết về chiếc\nThiết kế sang trọng, màn hình Super AMOLED\nTrước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.\nSamsung Galaxy A73 được thiết kế gọn nhẹ với tiêu chí đáp ứng khả năng mang theo để tiện đi lại cho người dùng. Giờ đây, bạn có thể mang theo chiếc smartphone bên cạnh đến bất cứ đâu, bất cứ lúc nào.\nKích thước và trọng lượng của chiếc điện thoại rất vừa phải và dĩ nhiên sẽ không chiếm quá nhiều diện tích trong túi xách và có thể di chuyển dễ dàng.",
+      "brief": " Trước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.",
+      "categoryId": "2h0YrF8",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659530373/anhhtus/wlc53oycanv93idedvf3.png",
+      "createdAt": "2022-08-03T12:39:35.184Z",
+      "id": 16
+    },
+    {
+      "name": "iPhone 13 Pro Max 128GB | Chính hãng VN/A",
+      "originalPrice": 34900000,
+      "saleOffPrice": 27390000,
+      "feature": "Camera chất lượng, bắt trọn từng khoảng khắc - Cụm 4 camera với cảm biến chính lên đến 108 MP\nThưởng thức không gian giải trí cực đỉnh - Màn hình lớn 6.7 inch, độ phân giải Full HD+, 120Hz mượt mà",
+      "desc": "Năm 2022 hứa hẹn sẽ là một năm rất đáng trông đợi đối với những ai là fan của thương hiệu điện thoại Samsung. Mới đây, hãng sẽ tiếp tục cho ra mắt nhiều smartphone với sự cải tiến trong thiết kế và cấu hình, trong đó phải kể đến chiếc Samsung Galaxy A73 với nhiều cải tiến so với thế hệ trước. Vậy sản phẩm có gì nổi bật, giá bao nhiêu và liệu có nên mua không? Tìm hiểu ngay nhé!\nĐánh giá Samsung A73 - Hiệu năng mượt mà, chụp ảnh chuyên nghiệp\nĐiện thoại cao cấp nhất dòng Galaxy A series sở hữu nhiều nâng cấp đáng giá so với thế hệ trước, từ ngoại hình cho đến hiệu năng, đặc biệt là hệ thống camera. Sau đây là những đánh giá chi tiết về chiếc\nThiết kế sang trọng, màn hình Super AMOLED\nTrước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.\nSamsung Galaxy A73 được thiết kế gọn nhẹ với tiêu chí đáp ứng khả năng mang theo để tiện đi lại cho người dùng. Giờ đây, bạn có thể mang theo chiếc smartphone bên cạnh đến bất cứ đâu, bất cứ lúc nào.\nKích thước và trọng lượng của chiếc điện thoại rất vừa phải và dĩ nhiên sẽ không chiếm quá nhiều diện tích trong túi xách và có thể di chuyển dễ dàng.",
+      "brief": " Trước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.",
+      "categoryId": "2h0YrF8",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659530373/anhhtus/wlc53oycanv93idedvf3.png",
+      "createdAt": "2022-08-03T12:39:35.184Z",
+      "id": 17
+    },
+    {
+      "name": "iPhone 13 Pro Max 128GB | Chính hãng VN/A",
+      "originalPrice": 34900000,
+      "saleOffPrice": 27390000,
+      "feature": "Camera chất lượng, bắt trọn từng khoảng khắc - Cụm 4 camera với cảm biến chính lên đến 108 MP\nThưởng thức không gian giải trí cực đỉnh - Màn hình lớn 6.7 inch, độ phân giải Full HD+, 120Hz mượt mà",
+      "desc": "Năm 2022 hứa hẹn sẽ là một năm rất đáng trông đợi đối với những ai là fan của thương hiệu điện thoại Samsung. Mới đây, hãng sẽ tiếp tục cho ra mắt nhiều smartphone với sự cải tiến trong thiết kế và cấu hình, trong đó phải kể đến chiếc Samsung Galaxy A73 với nhiều cải tiến so với thế hệ trước. Vậy sản phẩm có gì nổi bật, giá bao nhiêu và liệu có nên mua không? Tìm hiểu ngay nhé!\nĐánh giá Samsung A73 - Hiệu năng mượt mà, chụp ảnh chuyên nghiệp\nĐiện thoại cao cấp nhất dòng Galaxy A series sở hữu nhiều nâng cấp đáng giá so với thế hệ trước, từ ngoại hình cho đến hiệu năng, đặc biệt là hệ thống camera. Sau đây là những đánh giá chi tiết về chiếc\nThiết kế sang trọng, màn hình Super AMOLED\nTrước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.\nSamsung Galaxy A73 được thiết kế gọn nhẹ với tiêu chí đáp ứng khả năng mang theo để tiện đi lại cho người dùng. Giờ đây, bạn có thể mang theo chiếc smartphone bên cạnh đến bất cứ đâu, bất cứ lúc nào.\nKích thước và trọng lượng của chiếc điện thoại rất vừa phải và dĩ nhiên sẽ không chiếm quá nhiều diện tích trong túi xách và có thể di chuyển dễ dàng.",
+      "brief": " Trước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.",
+      "categoryId": "2h0YrF8",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659530373/anhhtus/wlc53oycanv93idedvf3.png",
+      "createdAt": "2022-08-03T12:39:35.184Z",
+      "id": 18
+    },
+    {
+      "name": "iPhone 13 Pro Max 128GB | Chính hãng VN/A",
+      "originalPrice": 34900000,
+      "saleOffPrice": 27390000,
+      "feature": "Camera chất lượng, bắt trọn từng khoảng khắc - Cụm 4 camera với cảm biến chính lên đến 108 MP\nThưởng thức không gian giải trí cực đỉnh - Màn hình lớn 6.7 inch, độ phân giải Full HD+, 120Hz mượt mà",
+      "desc": "Năm 2022 hứa hẹn sẽ là một năm rất đáng trông đợi đối với những ai là fan của thương hiệu điện thoại Samsung. Mới đây, hãng sẽ tiếp tục cho ra mắt nhiều smartphone với sự cải tiến trong thiết kế và cấu hình, trong đó phải kể đến chiếc Samsung Galaxy A73 với nhiều cải tiến so với thế hệ trước. Vậy sản phẩm có gì nổi bật, giá bao nhiêu và liệu có nên mua không? Tìm hiểu ngay nhé!\nĐánh giá Samsung A73 - Hiệu năng mượt mà, chụp ảnh chuyên nghiệp\nĐiện thoại cao cấp nhất dòng Galaxy A series sở hữu nhiều nâng cấp đáng giá so với thế hệ trước, từ ngoại hình cho đến hiệu năng, đặc biệt là hệ thống camera. Sau đây là những đánh giá chi tiết về chiếc\nThiết kế sang trọng, màn hình Super AMOLED\nTrước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.\nSamsung Galaxy A73 được thiết kế gọn nhẹ với tiêu chí đáp ứng khả năng mang theo để tiện đi lại cho người dùng. Giờ đây, bạn có thể mang theo chiếc smartphone bên cạnh đến bất cứ đâu, bất cứ lúc nào.\nKích thước và trọng lượng của chiếc điện thoại rất vừa phải và dĩ nhiên sẽ không chiếm quá nhiều diện tích trong túi xách và có thể di chuyển dễ dàng.",
+      "brief": " Trước khi mua bất kỳ chiếc điện thoại nào, người dùng cũng sẽ quan tâm đến thiết kế sản phẩm trước. Với phiên bản A73, Samsung đã tạo nên một chiếc smartphone với vẻ ngoài mang đến cảm giác sang trọng và tinh tế.",
+      "categoryId": "2h0YrF8",
+      "status": 0,
+      "img": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659530373/anhhtus/wlc53oycanv93idedvf3.png",
+      "createdAt": "2022-08-03T12:39:35.184Z",
+      "id": 19
+    }
+  ]
+}
