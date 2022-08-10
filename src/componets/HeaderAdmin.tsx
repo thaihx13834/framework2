@@ -3,6 +3,7 @@ import { AutoComplete, Input } from "antd";
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import ImgLogo from "../../img/logo.png";
 
 type Props = {};
 
@@ -11,7 +12,7 @@ const HeaderAdmin = (props: Props) => {
     <Headeradmin>
       <div>
         <Link to="/">
-          <img src="../../img/logo.png" width="65" height="57" alt="" />
+          <img src={ImgLogo} width="65" height="57" alt="" />
         </Link>
 
         <RoundSearch style={{ width: 500 }}>

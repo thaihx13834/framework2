@@ -15,6 +15,8 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/grid";
 
+import BannerImg from "../../img/Banner.png";
+
 type Props = {};
 
 const Banner = (props: Props) => {
@@ -34,29 +36,29 @@ const Banner = (props: Props) => {
     >
       <div className="swiper-wrapper">
         <SwiperSlide>
-          <Img src="../../../img/Banner.png" />
+          <Img src={BannerImg} />
         </SwiperSlide>
         <SwiperSlide>
-          <Img src="../../../img/Banner.png" />
+          <Img src={BannerImg} />
         </SwiperSlide>
         <SwiperSlide>
-          <Img src="../../../img/Banner.png" />
+          <Img src={BannerImg} />
         </SwiperSlide>
         <SwiperSlide>
-          <Img src="../../../img/Banner.png" />
+          <Img src={BannerImg} />
         </SwiperSlide>
 
         <SwiperSlide>
-          <Img src="../../../img/Banner.png" />
+          <Img src={BannerImg} />
         </SwiperSlide>
         <SwiperSlide>
-          <Img src="../../../img/Banner.png" />
+          <Img src={BannerImg} />
         </SwiperSlide>
         <SwiperSlide>
-          <Img src="../../../img/Banner.png" />
+          <Img src={BannerImg} />
         </SwiperSlide>
         <SwiperSlide>
-          <Img src="../../../img/Banner.png" />
+          <Img src={BannerImg} />
         </SwiperSlide>
       </div>
     </Swiperr>
